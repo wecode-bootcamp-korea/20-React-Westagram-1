@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.Main {
+  background-color: #fafafa;
+  main {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    .feeds {
+      width: 500px;
+      margin-right: 30px;
+    }
+  }
+}
