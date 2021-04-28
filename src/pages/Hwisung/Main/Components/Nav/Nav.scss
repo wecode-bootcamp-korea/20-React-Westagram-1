@@ -1,0 +1,65 @@
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: white;
+
+  .insta_logo {
+    display: flex;
+    justify-content: space-around;
+    width: 130px;
+
+    .insta {
+      width: 20px;
+      height: 20px;
+    }
+
+    .logo {
+      font-family: 'Lobster', cursive;
+    }
+  }
+
+  .search_act {
+    position: relative;
+    height: 40px;
+    top: 15%;
+  }
+
+  .search {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 35%;
+    top: 20%;
+  }
+
+  .search_bar {
+    text-align: center;
+    height: 70%;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background-color: #f3f3f3;
+  }
+
+  .act {
+    display: flex;
+    justify-content: space-around;
+    width: 130px;
+
+    .explore {
+      width: 20px;
+      height: 20px;
+    }
+
+    .like {
+      width: 20px;
+      height: 20px;
+    }
+
+    .user {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
