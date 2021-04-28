@@ -1,0 +1,85 @@
+.sidebar {
+  width: 300px;
+  margin-top: 0;
+
+  .profile img {
+    border-radius: 50%;
+  }
+
+  aside div {
+    width: 100%;
+  }
+
+  .myprofile {
+    height: 60px;
+    display: flex;
+    position: relative;
+    text-align: left;
+    padding: 5px;
+    margin: 20px 0;
+  }
+
+  .myprofile img {
+    width: 56px;
+    border-radius: 50%;
+  }
+
+  .myprofile .profile {
+    width: 70px;
+    margin: 0;
+  }
+
+  .myprofile .name {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .id {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .myprofile .change {
+    width: 25px;
+  }
+
+  .recommend {
+    width: 100%;
+  }
+
+  .recommend span:first-child {
+    display: inline-block;
+    width: 225px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .user {
+    display: flex;
+    height: 48px;
+  }
+
+  .user .profile {
+    width: 32px;
+    margin: 10px;
+  }
+
+  .user .profile img {
+    width: 100%;
+  }
+
+  .userid {
+    width: 200px;
+  }
+
+  .user .follow {
+    width: 45px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    display: none;
+  }
+}

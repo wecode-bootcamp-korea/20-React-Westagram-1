@@ -1,0 +1,39 @@
+footer {
+  margin-top: 20px;
+  margin-bottom: 60px;
+
+  * {
+    color: #8e8e8e;
+    font-size: 12px;
+  }
+
+  ul {
+    margin-bottom: 15px;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  li {
+    margin: 2px 8px;
+    white-space: nowrap;
+  }
+
+  form {
+    display: inline;
+  }
+
+  select {
+    margin: 0 8px;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  p {
+    display: inline;
+  }
+}

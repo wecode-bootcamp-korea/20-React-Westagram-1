@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginDoeun from './pages/Doeun/Login/Login';
 import MainDoeun from './pages/Doeun/Main/Main';
 
-import LoginHwisung from './pages/hwisung/Login/Login';
-import Mainhwisung from './pages/hwisung/Main/Main';
+import LoginHwisung from './pages/Hwisung/Login/Login';
+import Mainhwisung from './pages/Hwisung/Main/Main';
 
 import LoginYeonju from './pages/Yeonju/Login/Login';
 import MainYeonju from './pages/Yeonju/Main/Main';
@@ -14,7 +14,7 @@ import MainYeseul from './pages/Yeseul/Main/Main';
 
 class Routes extends React.Component {
   render() {
-    return(
+    return (
       <Router>
         <Switch>
           <Route exact path="/login-doeun" component={LoginDoeun} />
@@ -27,7 +27,7 @@ class Routes extends React.Component {
           <Route exact path="/main-yeonju" component={MainYeseul} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 

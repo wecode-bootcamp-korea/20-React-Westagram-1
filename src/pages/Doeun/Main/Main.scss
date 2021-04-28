@@ -1,0 +1,128 @@
+@font-face {
+  font-family: instaStyleFont;
+  src: url('http://localhost:3000/images/Doeun/blue_vinyl_regular_ps_ot.otf');
+}
+
+body {
+  background-color: #fafafa;
+}
+
+* {
+  margin: auto;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.mainSass {
+  .mainContainer {
+    display: flex;
+    width: 960px;
+    margin-top: 84px;
+  }
+
+  .storyBox {
+    position: relative;
+    width: 614px;
+    height: 130px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: white;
+    font-size: 14px;
+    overflow-x: scroll;
+  }
+
+  .storyBox::-webkit-scrollbar {
+    display: none;
+  }
+
+  .storyBox i {
+    position: absolute;
+    top: 50px;
+    color: white;
+    font-size: 22px;
+    text-shadow: 0 0 5px #8e8e8e;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .fa-chevron-circle-left {
+    left: 10px;
+  }
+
+  .fa-chevron-circle-right {
+    right: 10px;
+  }
+
+  .storySpan {
+    display: flex;
+    position: relative;
+    right: 0px;
+    transition: 1s;
+  }
+
+  .story {
+    width: 70px;
+    margin: 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .story div {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  #storyring {
+    width: 66px;
+  }
+
+  .story:hover #storyring {
+    transform: rotate(3turn);
+    transition: 4s;
+  }
+
+  #storyprofile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-54%);
+    width: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .profile img {
+    border-radius: 50%;
+  }
+
+  .gray {
+    color: #8e8e8e;
+  }
+
+  .blue {
+    color: #4295f6;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .blue:hover {
+    cursor: pointer;
+  }
+
+  .twelve {
+    font-size: 12px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  @media (max-width: 1000px) {
+    div.mainContainer {
+      width: fit-content;
+    }
+  }
+}
