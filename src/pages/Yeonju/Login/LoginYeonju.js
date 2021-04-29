@@ -1,15 +1,15 @@
 import React from 'react';
-import './Login.scss';
+import './LoginYeonju.scss';
 import { withRouter } from 'react-router-dom';
 
-class Login extends React.Component {
+class LoginYeonju extends React.Component {
   goToMain = () => {
-    this.props.history.push('./main');
+    this.props.history.push('/mainyeonju');
   };
 
   render() {
     return (
-      <div className="Login">
+      <div className="LoginYeonju">
         <div className="outbox">
           <header className="westagram"> Westagram </header>
           <form className="id_pw">
@@ -30,4 +30,4 @@ class Login extends React.Component {
   }
 }
 
-export default withRouter(Login);
+export default withRouter(LoginYeonju);
