@@ -13,6 +13,7 @@ function LoginBox({ history }) {
 
   //비밀번호 표시/숨김 버튼
   const [type, resetType] = useState('password');
+
   function showPassword() {
     type === 'password' ? resetType('text') : resetType('password');
   }
@@ -39,12 +40,13 @@ function LoginBox({ history }) {
         <h1 onClick={goToMain}>westagram</h1>
       </div>
       <div className="login">
-        <form action="/main" onSubmit={checkValidation}>
+        <form action="/main-doeun" onSubmit={checkValidation}>
           <div>
-            <label htmlFor="id" className={id ? 'typing' : null}>
+            <label htmlFor="id" className={id && 'typing'}>
               전화번호, 사용자 이름 또는 이메일
             </label>
             <input
+              className={id && 'typing'}
               onInput={e => {
                 resetId(e.target.value);
               }}
@@ -55,6 +57,7 @@ function LoginBox({ history }) {
           </div>
           <div>
             <input
+              className={pswd && 'typing'}
               onInput={e => {
                 resetPswd(e.target.value);
               }}
@@ -62,14 +65,14 @@ function LoginBox({ history }) {
               id="pw"
               name="pw"
             />
-            <label htmlFor="pw" className={pswd ? 'typing' : null}>
+            <label htmlFor="pw" className={pswd && 'typing'}>
               비밀번호
             </label>
             <p
               className={pswd ? 'showPw show' : 'showPw'}
               onClick={showPassword}
             >
-              비밀번호 표시
+              {type === 'password' ? '비밀번호 표시' : '숨기기'}
             </p>
           </div>
           <div>
@@ -90,7 +93,7 @@ function LoginBox({ history }) {
         </div>
         <div className="facebook">
           <a>
-            <img alt="facebook logo" src="./img/facebook.png" />
+            <img alt="facebook logo" src="images/Doeun/facebook.png" />
             Facebook으로 로그인
           </a>
         </div>

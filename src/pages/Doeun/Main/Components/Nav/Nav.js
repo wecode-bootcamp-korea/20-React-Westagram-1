@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Nav.scss';
 import { Link, withRouter } from 'react-router-dom';
 
-function Nav(props, { history }) {
+function Nav(props) {
   function goToLogin() {
-    history.push('/login-doeun');
+    props.history.push('/login-doeun');
   }
 
   let [matchedUsers, resetMatchedUsers] = useState([]);
@@ -29,8 +29,8 @@ function Nav(props, { history }) {
           <i className="fas fa-search"></i>
           <div className="searchList">
             <div className="idList">
-              {matchedUsers.map(users => (
-                <div class="searchedUser">
+              {matchedUsers.map((users, index) => (
+                <div key={index} class="searchedUser">
                   <img alt="user's profile image" src={users.profileImg} />
                   <div class="userId">
                     <p class="id">{users.id}</p>
