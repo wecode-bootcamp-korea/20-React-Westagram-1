@@ -1,0 +1,118 @@
+@import '../../../../../Styles/Yeseul/variable.scss';
+
+.feed {
+  margin-bottom: 60px;
+
+  &__header {
+    padding: 8px 16px;
+
+    &__more-icon {
+      margin-right: -12px;
+      padding: 12px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-bottom: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  &__btns {
+    display:flex;
+    margin-top: 4px;
+    padding: 0 8px;
+  }
+
+  &__likes-number {
+    margin-bottom: 5px;
+    padding: 0 16px;
+
+    a {
+      color: $main-font;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  &__description {
+    margin-bottom: 5px;
+    padding: 0 16px;
+  }
+
+  &__comments {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid $border--lighten;
+
+    .feed__comment {
+      position: relative;
+      margin-bottom: 5px;
+
+      a {
+        margin-right: 4px;
+      }
+
+      .delete-btn {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        margin-top: -20px;
+        color: $main-font;
+        line-height: 24px;
+        opacity: .2;
+      }
+
+      &:hover .delete-btn {
+        display: block;
+
+        &:hover {
+          opacity: .5;
+        }
+      }
+
+      .like-btn {
+        padding: 0;
+        width: 12px;
+        height: 12px;
+
+        svg {
+          fill: none;
+          stroke: $border--darken;
+          stroke-width: 45px;
+
+          &.clicked {
+            fill: $btn--red;
+            stroke: $btn--red;
+          }
+        }
+      }
+    }
+  }
+
+  &__form {
+    padding: 0 8px;
+    height: 56px;
+
+    .feed__input-comment {
+      width: calc(100% - 96px);
+    }
+
+    .feed__submit-comment {
+      padding: 8px;
+      width: auto;
+      font-size: 14px;
+      font-weight: 600;
+      color: $btn--blue;
+    }
+  }
+}
+;

@@ -1,0 +1,23 @@
+@import '../../../../../Styles/Yeseul/variable.scss';
+
+.story {
+  $self: &;
+  margin: 16px 0;
+  padding: 8px 16px;
+  height: 220px;
+  overflow: auto;
+
+  &__header {
+    padding: 8px 0;
+
+    #{$self}__title {
+      color: $font--grey;
+      font-size: 14px;
+    }
+
+    a {
+      color: $main-font;
+      font-size: 12px;
+    }
+  }
+}

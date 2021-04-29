@@ -1,0 +1,46 @@
+@import './variable.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $bg-light-grey;
+	font-size: 14px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+	color: $font--dark-blue;
+}
+
+input {
+	width: 100%;
+}
+
+input[type='submit'] {
+	cursor: pointer;
+}
+
+button {
+	display: block;
+	padding: 8px;
+	cursor: pointer;
+}
+
+button:disabled, input:disabled {
+	opacity: .3;
+    pointer-events: none;
+}
+
+.give-border {
+    border: 1px solid $main-border;
+    background-color: #fff;
+}
+
+.logo {
+	font-family: 'Lobster', cursive;
+}

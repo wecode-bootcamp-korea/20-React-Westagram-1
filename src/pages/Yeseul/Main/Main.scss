@@ -1,0 +1,37 @@
+body {
+  padding-top: 54px;
+  line-height: 18px;
+}
+
+main[role="main"] {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+
+  header {
+    font-weight: 600;
+  }
+
+  .feeds {
+    width: 100%;
+    max-width: 610px;
+  }
+
+  .main-right {
+    position: sticky;
+    top: 84px;
+    margin-left: 30px;
+    width: 295px;
+    height: 0;
+  
+    
+  
+    .user-profile {
+      padding: 0 8px;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  }
+}

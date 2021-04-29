@@ -1,0 +1,83 @@
+@import '../../../../../Styles/Yeseul/variable.scss';
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  border-bottom: 1px solid $main-border;
+  background-color: #fff;
+
+  .inner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 975px;
+    box-sizing: border-box;
+
+    h1 .like-button {
+      display: flex;
+      align-items: center;
+      color: $main-font;
+
+      img {
+        margin-right: 15px;
+        padding-right: 14px;
+        width: 22px;
+        height: 22px;
+        box-sizing: content-box;
+        border-right: 2px solid $main-font;
+      }
+
+      span {
+        padding-bottom: 7px;
+        font-size: 28px;
+      }
+    }
+
+    .nav__search {
+      display: flex;
+      align-items: center;
+      padding: 3px 10px 3px 26px;
+      width: 215px;
+      min-width: 125px;
+      height: 28px;
+      box-sizing: border-box;
+      border: 1px solid $main-border;
+      border-radius: 3px;
+      background-color: $bg-light-grey;
+
+      input {
+        height: 100%;
+        background-color: transparent;
+
+        &::placeholder {
+          text-align: center;
+        }
+      }
+    }
+
+    .nav__menu {
+      display: flex;
+
+      li {
+        margin-left: 22px;
+        width: 22px;
+        height: 22px;
+
+        .like-button {
+          padding: 0;
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}

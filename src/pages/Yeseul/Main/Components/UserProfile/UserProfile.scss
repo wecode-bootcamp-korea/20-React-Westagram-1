@@ -1,0 +1,21 @@
+@import '../../../../../Styles/Yeseul/variable.scss';
+
+.profile-image--big {
+  display: block;
+  margin-right: 16px;
+  width: 56px;
+  height: 56px;
+  border: 1px solid $main-border;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-image--small {
+  display: block;
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $main-border;
+  border-radius: 50%;
+  overflow: hidden;
+}
