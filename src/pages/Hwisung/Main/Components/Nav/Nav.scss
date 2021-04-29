@@ -5,41 +5,41 @@
   height: 50px;
   background-color: white;
 
-  .insta_logo {
+  .InstaLogo {
     display: flex;
     justify-content: space-around;
     width: 130px;
 
-    .insta {
+    .InstaLogoImg {
       width: 20px;
       height: 20px;
     }
 
-    .logo {
+    .InstaLogoFont {
       font-family: 'Lobster', cursive;
     }
   }
 
-  .search_act {
+  .SearchBar {
     position: relative;
     height: 40px;
     top: 15%;
-  }
 
-  .search {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 35%;
-    top: 20%;
-  }
+    .SearchBarImg {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      left: 35%;
+      top: 20%;
+    }
 
-  .search_bar {
-    text-align: center;
-    height: 70%;
-    border: 1px solid #d9d9d9;
-    border-radius: 3px;
-    background-color: #f3f3f3;
+    .SearchBarBox {
+      text-align: center;
+      height: 70%;
+      border: 1px solid #d9d9d9;
+      border-radius: 3px;
+      background-color: #f3f3f3;
+    }
   }
 
   .act {

@@ -38,10 +38,9 @@ class Aside extends React.Component {
                 src="/images/Hwisung/seoultravel.png"
                 alt=""
                 class="story_list_img"
-                alt="프로필"
               />
-              <a>seoultravel</a>
-              <a>2시간전</a>
+              <div>seoultravel</div>
+              <div>2시간전</div>
             </div>
             <div class="story_list3">
               <img
