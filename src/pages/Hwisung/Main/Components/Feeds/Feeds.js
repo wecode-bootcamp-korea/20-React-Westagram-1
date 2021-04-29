@@ -9,21 +9,25 @@ class Feeds extends React.Component {
           <article class="feed">
             <div class="feed_account">
               <div id="feed_account">
-                <img src="/images/netflix.png" alt="넷플릭스" />
+                <img src="/images/Hwisung/netflix.png" alt="넷플릭스" />
               </div>
             </div>
             <div class="feed_img">
-              <img src="/images/feedimg.png" class="feed_img" alt="피드내용" />
+              <img
+                src="/images/Hwisung/feedimg.png"
+                class="feed_img"
+                alt="피드내용"
+              />
             </div>
             <div class="status">
               <img
                 class="status_like"
-                src="/images/like.png"
+                src="/images/Hwisung/like.png"
                 alt="좋아요 상태"
               />
-              <img src="/images/reply.png" alt="답글" />
-              <img src="/images/dm.png" alt="메세지" />
-              <img src="/images/share.png" alt="공유하기" />
+              <img src="/images/Hwisung/reply.png" alt="답글" />
+              <img src="/images/Hwisung/dm.png" alt="메세지" />
+              <img src="/images/Hwisung/share.png" alt="공유하기" />
             </div>
             <div class="whoLike">위코드님 외 10명이조아함</div>
             <div class="reply_list">

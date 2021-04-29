@@ -8,7 +8,11 @@ class Aside extends React.Component {
         <div class="Aside">
           <div class="profile">
             <div>
-              <img class="wecode_img" src="/images/wecode.png" alt="프로필" />
+              <img
+                class="wecode_img"
+                src="/images/Hwisung/wecode.png"
+                alt="프로필"
+              />
             </div>
             <div class="wecode_info">
               <div class="wecode_id">wecode_bootcamp</div>
@@ -20,7 +24,7 @@ class Aside extends React.Component {
             <span class="seeAll_1">모두보기</span>
             <div>
               <img
-                src="/images/travelreason.png"
+                src="/images/Hwisung/travelreason.png"
                 class="story_list_img"
                 alt="프로필"
               />
@@ -31,7 +35,7 @@ class Aside extends React.Component {
             </div>
             <div class="story_list2">
               <img
-                src="/images/seoultravel.png"
+                src="/images/Hwisung/seoultravel.png"
                 alt=""
                 class="story_list_img"
                 alt="프로필"
@@ -41,7 +45,7 @@ class Aside extends React.Component {
             </div>
             <div class="story_list3">
               <img
-                src="/images/greedeat.png"
+                src="/images/Hwisung/greedeat.png"
                 class="story_list_img"
                 alt="프로필"
               />
@@ -54,7 +58,7 @@ class Aside extends React.Component {
             <span class="seeAll_2">모두보기</span>
             <div class="recommend_list1">
               <img
-                src="/images/musinsa.png"
+                src="/images/Hwisung/musinsa.png"
                 class="recommend_list_img"
                 alt="프로필"
               />
@@ -63,7 +67,7 @@ class Aside extends React.Component {
             </div>
             <div class="recommend_list2">
               <img
-                src="/images/dingo_travel.png"
+                src="/images/Hwisung/dingo_travel.png"
                 class="recommend_list_img"
                 alt="프로필"
               />
@@ -71,7 +75,11 @@ class Aside extends React.Component {
             </div>
             <a>휘성님 외 2명이</a>
             <div class="recommend_list3">
-              <img src="/images/todayhouse.png" class="recommend_list_img" />
+              <img
+                src="/images/Hwisung/todayhouse.png"
+                class="recommend_list_img"
+                alt="오늘의집"
+              />
               <a>todayhouse</a>
               <a>휘성님 외 2명이</a>
             </div>

@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 class LoginHwisung extends React.Component {
   //class productList
   goToMain = () => {
-    this.props.history.push('/MainHwisung');
+    this.props.history.push('/Main');
   };
 
   render() {
