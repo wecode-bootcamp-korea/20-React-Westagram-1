@@ -26,6 +26,9 @@ class LoginYeseul extends React.Component {
   };
 
   render() {
+    const { valueId, valuePw } = this.state;
+    const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
+
     return (
       <main className="login give-border">
         <h1 className="logo">westagram</h1>
@@ -34,14 +37,14 @@ class LoginYeseul extends React.Component {
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={this.state.valueId}
+              value={valueId}
               className="js-input-id"
               onChange={this.handleIdInput}
             />
             <input
               type="password"
               placeholder="비밀번호"
-              value={this.state.valuePw}
+              value={valuePw}
               className="js-input-pw"
               onChange={this.handlePwInput}
             />
@@ -50,6 +53,7 @@ class LoginYeseul extends React.Component {
             type="button"
             className="js-login-btn"
             onClick={this.goToMain}
+            disabled={!(checkId.test(valueId) && valuePw.length > 5)}
           >
             로그인
           </button>
