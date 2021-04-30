@@ -7,12 +7,20 @@ class LoginBox extends React.Component {
     super();
     this.state = {
       id: '',
-      pswd: '',
+      pw: '',
       type: 'password',
       warning: '',
       validId: /\W/,
     };
   }
+
+  handleInputId = e => {
+    this.setState({ id: e.target.value });
+  };
+
+  handleInputPw = e => {
+    this.setState({ pw: e.target.value });
+  };
 
   goToMain = () => {
     this.props.history.push('/main-doeun');
@@ -25,10 +33,7 @@ class LoginBox extends React.Component {
   };
 
   checkValidation = () => {
-    if (
-      this.state.validId.exec(this.state.id) ||
-      this.state.pswd !== 'wecode'
-    ) {
+    if (this.state.validId.exec(this.state.id) || this.state.pw !== 'wecode') {
       this.setState({
         warning: (
           <p>
@@ -56,9 +61,7 @@ class LoginBox extends React.Component {
               </label>
               <input
                 className={this.state.id && 'typing'}
-                onInput={e => {
-                  this.setState({ id: e.target.value });
-                }}
+                onInput={this.handleInputId}
                 type="text"
                 id="id"
                 name="id"
@@ -66,19 +69,17 @@ class LoginBox extends React.Component {
             </div>
             <div>
               <input
-                className={this.state.pswd && 'typing'}
-                onInput={e => {
-                  this.setState({ pswd: e.target.value });
-                }}
+                className={this.state.pw && 'typing'}
+                onChange={this.handleInputPw}
                 type={this.state.type}
                 id="pw"
                 name="pw"
               />
-              <label htmlFor="pw" className={this.state.pswd && 'typing'}>
+              <label htmlFor="pw" className={this.state.pw && 'typing'}>
                 비밀번호
               </label>
               <p
-                className={this.state.pswd ? 'showPw show' : 'showPw'}
+                className={this.state.pw ? 'showPw show' : 'showPw'}
                 onClick={this.showPassword}
               >
                 {this.state.type === 'password' ? '비밀번호 표시' : '숨기기'}
@@ -87,12 +88,12 @@ class LoginBox extends React.Component {
             <div>
               <button
                 className={
-                  this.state.id && this.state.pswd.length >= 6
+                  this.state.id && this.state.pw.length >= 6
                     ? 'loginBtn active'
                     : 'loginBtn'
                 }
                 disabled={
-                  this.state.id && this.state.pswd.length >= 6 ? false : true
+                  this.state.id && this.state.pw.length >= 6 ? false : true
                 }
               >
                 로그인

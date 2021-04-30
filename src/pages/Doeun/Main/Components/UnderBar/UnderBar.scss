@@ -16,7 +16,7 @@
     cursor: pointer;
   }
 
-  .tab img:first-child.pop {
+  .pop {
     animation: pop 0.2s linear 0s 1 alternate;
   }
 
@@ -27,6 +27,9 @@
     left: 14px;
     width: 30px;
     cursor: pointer;
+  }
+
+  .shrink {
     animation: shrink 0.2s linear 0s 1 alternate;
   }
 
