@@ -9,7 +9,6 @@ class Btn extends React.Component {
   render() {
     return (
       <>
-        <input class="pw_input" type="password" placeholder="비밀번호" />
         <input
           class="LoginBtn"
           id="LoginBtn"

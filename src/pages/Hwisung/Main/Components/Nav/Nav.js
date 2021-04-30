@@ -22,10 +22,14 @@ class Nav extends React.Component {
             />
             <input class="SearchBarBox" type="text" placeholder="검색" />
           </div>
-          <div class="act">
-            <img class="explore" src="/images/Hwisung/explore.png" alt="검색" />
-            <img class="like" src="/images/Hwisung/like.png" alt="좋아요" />
-            <img class="user" src="/images/Hwisung/user.png" alt="사용자" />
+          <div class="Act">
+            <img
+              class="Act_Explore"
+              src="/images/Hwisung/explore.png"
+              alt="검색"
+            />
+            <img class="Act_Like" src="/images/Hwisung/like.png" alt="좋아요" />
+            <img class="Act_User" src="/images/Hwisung/user.png" alt="사용자" />
           </div>
         </nav>
       </>
