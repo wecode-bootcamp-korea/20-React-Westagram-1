@@ -21,11 +21,13 @@ class Comment extends React.Component {
   }
 
   render() {
+    const { isLiked } = this.state;
+    const { key, userName, content, tagId } = this.props;
     return (
-      <p className="feed__comment align-item-center">
-        <span className="user-name">{this.props.user.name}</span>
-        <a href="#">{`@${this.props.tagID}`}</a>
-        {this.props.user.comment}
+      <p className="feed__comment align-item-center" key={key}>
+        <span className="user-name">{userName}</span>
+        <a href="#">{tagId ? `@${tagId}` : ''}</a>
+        {content}
         <button
           type="button"
           className="delete-btn js-delete-btn"
@@ -35,7 +37,7 @@ class Comment extends React.Component {
         </button>
         <button
           className={
-            this.state.isLiked
+            isLiked
               ? 'like-btn align-right js-like-btn clicked'
               : 'like-btn align-right js-like-btn'
           }

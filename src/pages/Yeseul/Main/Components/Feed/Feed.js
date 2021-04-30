@@ -6,7 +6,36 @@ import './Feed.scss';
 import Comment from '../Comment/Comment';
 
 class Feed extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: [
+        {
+          id: 1,
+          userName: 'objental',
+          content: '사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊',
+          tagId: '5write',
+        },
+        {
+          id: 2,
+          userName: 'jerrysmarket.official',
+          content: '와 너무 예뻐요',
+          tagId: '',
+        },
+      ],
+    };
+  }
+
   render() {
+    const { comments } = this.state;
+    const commentItem = comments.map(comment => (
+      <Comment
+        key={comment.id}
+        userName={comment.userName}
+        content={comment.content}
+        tagId={comment.tagId}
+      />
+    ));
     return (
       <article className="feed give-border">
         <header className="feed__header align-item-center">
@@ -59,22 +88,7 @@ class Feed extends React.Component {
             </span>
           </p>
         </div>
-        <div className="feed__comments js-comments">
-          <Comment
-            user={{
-              name: 'objental',
-              comment:
-                '사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊',
-            }}
-            tagID="5write"
-          />
-          <Comment
-            user={{
-              name: 'jerrysmarket.official',
-              comment: '와 너무 예뻐요',
-            }}
-          />
-        </div>
+        <div className="feed__comments js-comments">{commentItem}</div>
         <form
           className="feed__form align-item-center space-between"
           name="commentForm"
