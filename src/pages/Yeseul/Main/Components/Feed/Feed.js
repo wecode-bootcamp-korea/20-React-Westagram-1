@@ -3,6 +3,7 @@
 import React from 'react';
 import IconButton from '../Button/IconButton';
 import './Feed.scss';
+import Comment from '../Comment/Comment';
 
 class Feed extends React.Component {
   render() {
@@ -59,45 +60,20 @@ class Feed extends React.Component {
           </p>
         </div>
         <div className="feed__comments js-comments">
-          <p className="feed__comment align-item-center">
-            <span className="user-name">objental</span>
-            <a href="#">@5write</a>
-            사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊
-            <button type="button" className="delete-btn js-delete-btn">
-              x
-            </button>
-            <button className="like-btn align-right js-like-btn">
-              <svg
-                version="1.1"
-                id="Capa_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="-50 -45 580 580"
-                xmlSpace="preserve"
-              >
-                <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514C512,93.417,453.532,30,376,30z" />
-              </svg>
-            </button>
-          </p>
-          <p className="feed__comment align-item-center">
-            <span className="user-name">jerrysmarket.official</span>와 너무
-            예뻐요
-            <button type="button" className="delete-btn js-delete-btn">
-              x
-            </button>
-            <button className="like-btn align-right js-like-btn">
-              <svg
-                version="1.1"
-                id="Capa_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="-50 -45 580 580"
-                xmlSpace="preserve"
-              >
-                <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514C512,93.417,453.532,30,376,30z" />
-              </svg>
-            </button>
-          </p>
+          <Comment
+            user={{
+              name: 'objental',
+              comment:
+                '사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊',
+            }}
+            tagID="5write"
+          />
+          <Comment
+            user={{
+              name: 'jerrysmarket.official',
+              comment: '와 너무 예뻐요',
+            }}
+          />
         </div>
         <form
           className="feed__form align-item-center space-between"

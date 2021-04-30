@@ -37,9 +37,7 @@ class Recommendation extends React.Component {
   render() {
     const items = this.state.users.map(user => (
       <UserList parent="recommendation" key={user.id} user={user}>
-        <button type="button" className="follow align-right">
-          팔로우
-        </button>
+        {this.props.children}
       </UserList>
     ));
 

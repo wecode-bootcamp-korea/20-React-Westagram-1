@@ -33,7 +33,11 @@ class MainYeseul extends React.Component {
               </button>
             </section>
             <Story />
-            <Recommendation />
+            <Recommendation>
+              <button type="button" className="follow align-right">
+                팔로우
+              </button>
+            </Recommendation>
           </div>
         </main>
       </>
