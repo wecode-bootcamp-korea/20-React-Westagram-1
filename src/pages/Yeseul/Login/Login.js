@@ -5,6 +5,22 @@ import '../../../Styles/Yeseul/common.scss';
 import './Login.scss';
 
 class LoginYeseul extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      valueId: '',
+      valuePw: '',
+    };
+  }
+
+  handleIdInput = e => {
+    this.setState({ valueId: e.target.value });
+  };
+
+  handlePwInput = e => {
+    this.setState({ valuePw: e.target.value });
+  };
+
   goToMain = () => {
     this.props.history.push('/main-yeseul');
   };
@@ -18,12 +34,16 @@ class LoginYeseul extends React.Component {
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              value={this.state.valueId}
               className="js-input-id"
+              onChange={this.handleIdInput}
             />
             <input
               type="password"
               placeholder="비밀번호"
+              value={this.state.valuePw}
               className="js-input-pw"
+              onChange={this.handlePwInput}
             />
           </div>
           <button
