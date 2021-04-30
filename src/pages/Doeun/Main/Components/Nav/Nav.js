@@ -37,17 +37,21 @@ class Nav extends React.Component {
             <i className="fas fa-search"></i>
             <div className="searchList">
               <div className="idList">
-                {this.state.matchedUsers.map((users, index) => (
-                  <div key={index} class="searchedUser">
-                    <img alt="user's profile image" src={users.profileImg} />
-                    <div class="userId">
-                      <p class="id">{users.id}</p>
-                      <p class="gray twelve" id="description">
-                        {users.description}
-                      </p>
+                {!this.state.matchedUsers.length ? (
+                  <p>검색결과가 없습니다.</p>
+                ) : (
+                  this.state.matchedUsers.map((users, index) => (
+                    <div key={index} class="searchedUser">
+                      <img alt="user's profile image" src={users.profileImg} />
+                      <div class="userId">
+                        <p class="id">{users.id}</p>
+                        <p class="gray twelve" id="description">
+                          {users.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </div>
           </form>

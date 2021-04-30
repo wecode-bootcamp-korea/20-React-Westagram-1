@@ -74,9 +74,8 @@ nav {
     top: 30px;
     left: -15px;
     width: 280px;
-    min-height: 70px;
+    min-height: 60px;
     max-height: 350px;
-    padding: 0 8px;
     color: #8e8e8e;
     background-color: white;
     border-radius: 5px;
@@ -98,7 +97,7 @@ nav {
     visibility: visible;
   }
 
-  .searchList > p {
+  .idList > p {
     position: relative;
     top: 20px;
   }
@@ -108,18 +107,22 @@ nav {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 15px 0;
-  }
+    padding: 10px;
 
-  .searchedUser img {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-    border-radius: 50%;
-  }
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
 
-  .searchedUser .userId {
-    text-align: left;
+    .userId {
+      text-align: left;
+    }
+
+    &:hover {
+      background-color: #f3ecf1;
+    }
   }
 
   .id {
@@ -135,27 +138,27 @@ nav {
   .icons {
     white-space: nowrap;
     font-size: 22px;
-  }
 
-  .icons img:first-child {
-    width: 20px;
-    transform: translateY(2px);
-  }
+    img:first-child {
+      width: 20px;
+      transform: translateY(2px);
+    }
 
-  .icons img:nth-child(2) {
-    width: 25px;
-    transform: translateY(5px);
-  }
+    img:nth-child(2) {
+      width: 25px;
+      transform: translateY(5px);
+    }
 
-  .icons img {
-    width: 25px;
-    transform: translateY(3px);
-  }
+    img {
+      width: 25px;
+      transform: translateY(3px);
+    }
 
-  .icons .profile {
-    width: 25px;
-    transform: translateY(3px);
-    margin-right: 0;
-    border-radius: 50%;
+    .profile {
+      width: 25px;
+      transform: translateY(3px);
+      margin-right: 0;
+      border-radius: 50%;
+    }
   }
 }

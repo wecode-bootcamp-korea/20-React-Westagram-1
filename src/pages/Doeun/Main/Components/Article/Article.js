@@ -1,85 +1,81 @@
 import React, { useState } from 'react';
-import Comments from '../Comments/Comments';
+import CommentBar from '../CommentBar/CommentBar';
 import UnderBar from '../UnderBar/UnderBar';
+import Comment from '../Comment/Comment';
 import './Article.scss';
 
-function Article() {
-  let [commentList, setCommentList] = useState([
-    { id: 'wecode_bootcamp', comment: '맛있겠당', key: 0 },
-  ]);
+class Article extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      commentList: [{ id: 'wecode_bootcamp', comment: '맛있겠당', key: 0 }],
+      input: '',
+    };
 
-  let [input, setInput] = useState('');
+    // let [input, setInput] = useState('');
+  }
 
-  function addComment() {
+  addComment = () => {
     let userId = document.location.search.slice(
       4,
       document.location.search.indexOf('&')
     );
     userId = userId ? userId : 'unknown';
-    setCommentList(
-      commentList.concat({
+    this.setState({
+      commentList: this.state.commentList.concat({
         id: userId,
-        comment: input,
-      })
+        comment: this.state.input,
+      }),
+    });
+  };
+
+  setInput = comment => {
+    this.setState({ input: comment });
+  };
+
+  setComment = comment => {
+    this.setState({ commentList: comment });
+  };
+
+  render() {
+    return (
+      <article>
+        <div className="header">
+          <div className="profile">
+            <img alt="my profile image" src="images/Doeun/profile.jpg" />
+          </div>
+          <div className="id">
+            <p>do.silv</p>
+          </div>
+          <div className="dots">
+            <img alt="ellipsis" src="images/Doeun/dot.png" />
+          </div>
+        </div>
+        <img alt="article image" src="images/Doeun/feedimg1.jpg" />
+        <UnderBar />
+        <div className="contents">
+          <div className="blahblah">
+            <p className="id">do.silv </p>
+            <p>빵 조아 🍰🥯🥞🍩🍪🍞🥐🥖🥨</p>
+          </div>
+          <p className="gray ago">1시간 전</p>
+          {this.state.commentList.map((c, index) => (
+            <Comment
+              c={c}
+              index={index}
+              commentList={this.state.commentList}
+              setComment={this.setComment}
+            />
+          ))}
+        </div>
+        <CommentBar
+          input={this.state.input}
+          setInput={this.setInput}
+          addComment={this.addComment}
+        />
+      </article>
     );
   }
-
-  return (
-    <article>
-      <div className="header">
-        <div className="profile">
-          <img alt="my profile image" src="images/Doeun/profile.jpg" />
-        </div>
-        <div className="id">
-          <p>do.silv</p>
-        </div>
-        <div className="dots">
-          <img alt="ellipsis" src="images/Doeun/dot.png" />
-        </div>
-      </div>
-      <img alt="article image" src="images/Doeun/feedimg1.jpg" />
-      <UnderBar />
-      <div className="contents">
-        <div className="blahblah">
-          <p className="id">do.silv </p>
-          <p>빵 조아 🍰🥯🥞🍩🍪🍞🥐🥖🥨</p>
-        </div>
-        <p className="gray ago">1시간 전</p>
-        {commentList.map((c, index) => (
-          <div className="blahblah">
-            <p className="id">{c.id} </p>
-            <p>{c.comment}</p>
-            <img
-              alt="comment ellipsis"
-              src="images/Doeun/dot.png"
-              id="smalldot"
-              key={index}
-              onClick={() => {
-                if (window.confirm('삭제하시겠습니까?')) {
-                  setCommentList(
-                    commentList
-                      .slice(0, index)
-                      .concat(commentList.slice(index + 1))
-                  );
-                }
-              }}
-            />
-            <img
-              alt="like comment"
-              src="images/Doeun/heart.png"
-              class="likeComment"
-            />
-            <img
-              alt="liked comment"
-              src="img/redheart.png"
-              class="likeComment liked hide"
-            />
-          </div>
-        ))}
-      </div>
-      <Comments input={input} setInput={setInput} addComment={addComment} />
-    </article>
-  );
 }
 
 export default Article;

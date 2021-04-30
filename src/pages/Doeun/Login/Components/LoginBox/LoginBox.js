@@ -79,7 +79,7 @@ class LoginBox extends React.Component {
                 비밀번호
               </label>
               <p
-                className={this.state.pw ? 'showPw show' : 'showPw'}
+                className={'showPw ' + (this.state.pw && 'show')}
                 onClick={this.showPassword}
               >
                 {this.state.type === 'password' ? '비밀번호 표시' : '숨기기'}
@@ -88,9 +88,8 @@ class LoginBox extends React.Component {
             <div>
               <button
                 className={
-                  this.state.id && this.state.pw.length >= 6
-                    ? 'loginBtn active'
-                    : 'loginBtn'
+                  'loginBtn ' +
+                  (this.state.id && this.state.pw.length >= 6 && 'active')
                 }
                 disabled={
                   this.state.id && this.state.pw.length >= 6 ? false : true

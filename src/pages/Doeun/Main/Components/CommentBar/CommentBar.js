@@ -1,7 +1,7 @@
 import React from 'react';
-import './Comments.scss';
+import './CommentBar.scss';
 
-class Comments extends React.Component {
+class CommentBar extends React.Component {
   constructor() {
     super();
     this.state = { comment: '' };
@@ -51,4 +51,4 @@ class Comments extends React.Component {
   }
 }
 
-export default Comments;
+export default CommentBar;

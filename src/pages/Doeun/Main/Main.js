@@ -12,7 +12,7 @@ class Main extends React.Component {
         {
           id: 'skuukzky',
           profileImg: 'images/Doeun/skuukzky.jpg',
-          description: '숮이 💄💅👡👠🎀👙🌂👗🌂🎀💋💌',
+          description: '숮이 💄💅👡👠🎀👙🌂👗💌',
         },
         {
           id: '_imyour_joy',
@@ -62,7 +62,7 @@ class Main extends React.Component {
         {
           id: 'wm_ohmygirl',
           profileImg: 'images/Doeun/wm_ohmygirl.jpg',
-          description: 'OHMYGIRL (오마이걸) WM ENT 오마이걸 공식 인스타그램',
+          description: 'OHMYGIRL (오마이걸) WM ENT',
         },
         {
           id: 'twicetagram',
