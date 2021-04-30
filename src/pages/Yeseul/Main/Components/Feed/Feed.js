@@ -9,6 +9,7 @@ class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      inputComment: '',
       comments: [
         {
           id: 1,
@@ -26,8 +27,29 @@ class Feed extends React.Component {
     };
   }
 
+  handleInput = e => {
+    this.setState({ inputComment: e.target.value });
+  };
+
+  addComment = e => {
+    const { inputComment, comments } = this.state;
+    e.preventDefault();
+    this.setState({
+      inputComment: '',
+      comments: [
+        ...comments,
+        {
+          id: comments.length + 1,
+          userName: 'yesl.k',
+          content: inputComment,
+          tagId: '',
+        },
+      ],
+    });
+  };
+
   render() {
-    const { comments } = this.state;
+    const { inputComment, comments } = this.state;
     const commentItem = comments.map(comment => (
       <Comment
         key={comment.id}
@@ -97,15 +119,18 @@ class Feed extends React.Component {
           <input
             type="text"
             placeholder="댓글 달기..."
+            value={inputComment}
             className="feed__input-comment"
             name="inputComment"
+            onChange={this.handleInput}
           />
           <input
             type="submit"
             className="feed__submit-comment"
             name="submitComment"
             value="게시"
-            disabled
+            disabled={!(inputComment.length > 0)}
+            onClick={this.addComment}
           />
         </form>
       </article>
