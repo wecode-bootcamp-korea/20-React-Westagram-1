@@ -16,14 +16,9 @@ class LoginYeonju extends React.Component {
 
   handleIdInput = e => {
     this.setState({
-      idValue: e.target.value,
+      [e.target.name]: e.target.value,
     });
-  };
-
-  handlePwInput = e => {
-    this.setState({
-      pwValue: e.target.value,
-    });
+    console.log(this.state);
   };
 
   render() {
@@ -38,12 +33,14 @@ class LoginYeonju extends React.Component {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleIdInput}
+              name="idValue"
             />
             <input
               className="pwInput"
               type="password"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              onChange={this.handleIdInput}
+              name="pwValue"
             />
             <button type="button" onClick={this.goToMain}>
               로그인
