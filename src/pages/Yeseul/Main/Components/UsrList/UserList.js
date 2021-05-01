@@ -1,28 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/aria-role */
 import React from 'react';
-import UserProfile from '../UserProfile/UserProfile';
 import './UserList.scss';
+import User from '../User/User';
 
 class UserList extends React.Component {
   render() {
+    const { parent, user, children } = this.props;
     return (
-      <li
-        className={`${this.props.parent}__item align-item-center`}
-        role="user-list"
-      >
-        <UserProfile size="small" user={this.props.user} />
-        <div>
-          <a href="#" className="user-name">
-            {this.props.user.name}
-          </a>
-          <p className="detail-info">
-            {this.props.parent === 'recommendation'
-              ? `${this.props.user.follower}님이 팔로우합니다`
-              : `${this.props.user.time} 전`}
-          </p>
-        </div>
-        {this.props.children}
+      <li className={`${parent}__item`} role="user-list">
+        <User
+          size="small"
+          user={user}
+          detailInfo={
+            <p className="detail-info">
+              {parent === 'recommendation'
+                ? `${user.follower}님이 팔로우합니다`
+                : `${user.time} 전`}
+            </p>
+          }
+        >
+          {children}
+        </User>
       </li>
     );
   }

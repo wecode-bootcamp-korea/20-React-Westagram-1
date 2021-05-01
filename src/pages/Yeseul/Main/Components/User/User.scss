@@ -1,0 +1,41 @@
+@import '../../../../../Styles/Yeseul/variable.scss';
+
+.user {
+  .profile-image--big {
+    display: block;
+    margin-right: 16px;
+    width: 56px;
+    height: 56px;
+    border: 1px solid $main-border;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .profile-image--small {
+    display: block;
+    margin-right: 16px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $main-border;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user-name {
+    margin-right: 4px;
+    color: $main-font;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .user-name:hover {
+    text-decoration: underline;
+  }
+
+  .detail-info {
+    color: $font--grey;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

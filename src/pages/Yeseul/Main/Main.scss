@@ -3,7 +3,7 @@ body {
   line-height: 18px;
 }
 
-main[role="main"] {
+main[role='main'] {
   display: flex;
   justify-content: center;
   padding-top: 30px;
@@ -23,13 +23,11 @@ main[role="main"] {
     margin-left: 30px;
     width: 295px;
     height: 0;
-  
-    
-  
+
     .user-profile {
       padding: 0 8px;
     }
-  
+
     button {
       font-size: 12px;
     }
