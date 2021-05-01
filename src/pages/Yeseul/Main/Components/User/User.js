@@ -24,3 +24,13 @@ class User extends Component {
 }
 
 export default User;
+
+/*
+    const items = users.map(user => (
+      <UserList parent="recommendation" key={user.id} user={user} size="small">
+        <button type="button" className="follow align-right">
+          팔로우
+        </button>
+      </UserList>
+    ));
+*/
