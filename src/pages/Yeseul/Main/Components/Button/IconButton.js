@@ -2,13 +2,12 @@ import React from 'react';
 
 class IconButton extends React.Component {
   render() {
+    const { className, info, children } = this.props;
+
     return (
-      <button type="button" className={this.props.className}>
-        <img
-          alt={this.props.info.name}
-          src={`/images/Yeseul/${this.props.info.fileName}`}
-        />
-        {this.props.children}
+      <button type="button" className={className}>
+        <img alt={info.name} src={`/images/Yeseul/${info.fileName}`} />
+        {children}
       </button>
     );
   }

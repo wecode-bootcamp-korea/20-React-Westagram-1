@@ -34,6 +34,7 @@ class Feed extends React.Component {
 
   addComment = e => {
     const { inputComment, comments } = this.state;
+
     e.preventDefault();
     this.setState({
       inputComment: '',
@@ -51,7 +52,7 @@ class Feed extends React.Component {
 
   render() {
     const { inputComment, comments } = this.state;
-    const { contents, writer } = this.props;
+    const { writer, contents } = this.props;
 
     return (
       <article className="feed give-border">
