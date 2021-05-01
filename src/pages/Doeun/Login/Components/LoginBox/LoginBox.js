@@ -56,11 +56,11 @@ class LoginBox extends React.Component {
         <div className="login">
           <form action="/main-doeun" onSubmit={this.checkValidation}>
             <div>
-              <label htmlFor="id" className={this.state.id && 'typing'}>
+              <label htmlFor="id" className={this.state.id ? 'typing' : ''}>
                 전화번호, 사용자 이름 또는 이메일
               </label>
               <input
-                className={this.state.id && 'typing'}
+                className={this.state.id ? 'typing' : ''}
                 onInput={this.handleInputId}
                 type="text"
                 id="id"
@@ -69,17 +69,17 @@ class LoginBox extends React.Component {
             </div>
             <div>
               <input
-                className={this.state.pw && 'typing'}
+                className={this.state.pw ? 'typing' : ''}
                 onChange={this.handleInputPw}
                 type={this.state.type}
                 id="pw"
                 name="pw"
               />
-              <label htmlFor="pw" className={this.state.pw && 'typing'}>
+              <label htmlFor="pw" className={this.state.pw ? 'typing' : ''}>
                 비밀번호
               </label>
               <p
-                className={'showPw ' + (this.state.pw && 'show')}
+                className={'showPw ' + (this.state.pw ? 'show' : '')}
                 onClick={this.showPassword}
               >
                 {this.state.type === 'password' ? '비밀번호 표시' : '숨기기'}
@@ -87,10 +87,9 @@ class LoginBox extends React.Component {
             </div>
             <div>
               <button
-                className={
-                  'loginBtn ' +
-                  (this.state.id && this.state.pw.length >= 6 && 'active')
-                }
+                className={`loginBtn ${
+                  this.state.id && this.state.pw.length >= 6 ? 'active' : ''
+                }`}
                 disabled={
                   this.state.id && this.state.pw.length >= 6 ? false : true
                 }

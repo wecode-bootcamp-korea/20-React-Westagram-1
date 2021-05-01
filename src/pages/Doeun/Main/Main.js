@@ -5,8 +5,8 @@ import Nav from './Components/Nav/Nav';
 import './Main.scss';
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       USERS: [
         {
@@ -137,8 +137,8 @@ class Main extends React.Component {
                 className="storySpan"
                 style={{ right: this.state.storyRight }}
               >
-                {[...this.state.USERS].reverse().map(users => (
-                  <div className="story">
+                {[...this.state.USERS].reverse().map((users, index) => (
+                  <div className="story" key={index}>
                     <div>
                       <img src="images/Doeun/storyring.png" id="storyring" />
                       <img

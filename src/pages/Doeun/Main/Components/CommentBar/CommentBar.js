@@ -40,7 +40,7 @@ class CommentBar extends React.Component {
             value={this.state.comment}
           />
           <button
-            className={this.state.comment && 'active'}
+            className={this.state.comment ? 'active' : ''}
             disabled={this.state.comment ? false : true}
           >
             게시

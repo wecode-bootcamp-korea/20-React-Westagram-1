@@ -4,6 +4,7 @@ import './Comment.scss';
 class Comment extends React.Component {
   constructor() {
     super();
+    this.state = { like: false };
   }
 
   render() {
@@ -27,12 +28,18 @@ class Comment extends React.Component {
         <img
           alt="like comment"
           src="images/Doeun/heart.png"
-          class="likeComment"
+          className="likeComment"
+          onClick={() => {
+            this.setState({ like: true });
+          }}
         />
         <img
           alt="liked comment"
-          src="img/redheart.png"
-          class="likeComment liked hide"
+          src="images/Doeun/redheart.png"
+          className={`likeComment liked ${this.state.like ? '' : 'hide'}`}
+          onClick={() => {
+            this.setState({ like: false });
+          }}
         />
       </div>
     );

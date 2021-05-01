@@ -27,15 +27,15 @@ class UnderBar extends React.Component {
           <img
             alt="like"
             src="images/Doeun/heart.png"
-            className={!this.state.like && 'pop'}
+            className={!this.state.like ? 'pop' : ''}
             onClick={this.likeit}
           />
           <img
             alt="liked"
             src="images/Doeun/redheart.png"
             id="red"
-            style={{ display: this.state.redLike && 'inline' }}
-            className={this.state.like && 'pop'}
+            style={{ display: this.state.redLike ? 'inline' : '' }}
+            className={this.state.like ? 'pop' : ''}
             onClick={this.cancel}
           />
           <img alt="comment" src="images/Doeun/comment.jpg" />
