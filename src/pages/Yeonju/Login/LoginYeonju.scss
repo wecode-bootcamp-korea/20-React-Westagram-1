@@ -42,10 +42,16 @@
       button {
         width: 350px;
         height: 40px;
-        background-color: #c4e1fb;
+        // background-color: #c4e1fb;
         border: none;
         border-radius: 5px;
         color: white;
+      }
+      .btnDisabled {
+        background-color: #c4e1fb;
+      }
+      .btnActive {
+        background-color: #5586eb;
       }
     }
 
