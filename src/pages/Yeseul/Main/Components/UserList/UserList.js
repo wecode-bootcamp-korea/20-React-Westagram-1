@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/aria-role */
-import React from 'react';
+import React, { Component } from 'react';
 import './UserList.scss';
 import User from '../User/User';
 
-class UserList extends React.Component {
+class UserList extends Component {
   render() {
     const { users, children } = this.props;
     return (

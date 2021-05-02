@@ -1,24 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { Component } from 'react';
 import './Comment.scss';
 
-class Comment extends React.Component {
+class Comment extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLiked: false,
     };
-
-    this.likeComment = this.likeComment.bind(this);
   }
 
-  deleteComment(e) {
+  deleteComment = e => {
     e.target.parentNode.remove();
-  }
+  };
 
-  likeComment() {
+  likeComment = () => {
     this.setState({ isLiked: !this.state.isLiked });
-  }
+  };
 
   render() {
     const { isLiked } = this.state;

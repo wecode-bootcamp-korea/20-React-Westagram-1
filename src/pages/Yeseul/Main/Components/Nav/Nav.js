@@ -1,14 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import IconButton from '../Button/IconButton';
 import './Nav.scss';
 
-class Nav extends React.Component {
-  goToMain() {
-    this.props.history.push('/main');
-  }
-
+class Nav extends Component {
   render() {
     return (
       <nav>
@@ -56,4 +51,4 @@ class Nav extends React.Component {
   }
 }
 
-export default withRouter(Nav);
+export default Nav;

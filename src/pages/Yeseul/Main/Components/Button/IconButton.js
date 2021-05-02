@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class IconButton extends React.Component {
+class IconButton extends Component {
   render() {
     const { className, info, children } = this.props;
 

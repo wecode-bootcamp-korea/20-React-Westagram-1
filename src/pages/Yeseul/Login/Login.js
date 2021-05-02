@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../../../Styles/Yeseul/reset.scss';
 import '../../../Styles/Yeseul/common.scss';
 import './Login.scss';
 
-class LoginYeseul extends React.Component {
+class LoginYeseul extends Component {
   constructor(props) {
     super(props);
     this.state = {

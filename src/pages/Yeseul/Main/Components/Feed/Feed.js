@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { Component } from 'react';
 import User from '../User/User';
 import Comment from '../Comment/Comment';
 import IconButton from '../Button/IconButton';
 import './Feed.scss';
 
-class Feed extends React.Component {
+class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
