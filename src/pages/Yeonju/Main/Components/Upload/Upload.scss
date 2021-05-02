@@ -92,16 +92,15 @@
         font-size: 120%;
         margin-right: 20px;
       }
-      textarea {
+      input {
         resize: none;
         border-style: none;
         outline: none;
         width: 350px;
       }
-      textarea::placeholder {
+      input::placeholder {
         margin-top: 20px;
         letter-spacing: 3px;
-        transform: translateY(10px);
       }
       button {
         color: skyblue;
