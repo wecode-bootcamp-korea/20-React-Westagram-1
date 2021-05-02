@@ -11,15 +11,16 @@ class Feed extends Component {
     super(props);
     this.state = {
       inputComment: '',
+      commentId: 3,
       comments: [
         {
-          id: 1,
+          id: '1',
           writer: 'objental',
           content: '사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊',
           tagId: '5write',
         },
         {
-          id: 2,
+          id: '2',
           writer: 'jerrysmarket.official',
           content: '와 너무 예뻐요',
           tagId: '',
@@ -33,15 +34,16 @@ class Feed extends Component {
   };
 
   addComment = e => {
-    const { inputComment, comments } = this.state;
+    const { inputComment, commentId, comments } = this.state;
 
     e.preventDefault();
     this.setState({
       inputComment: '',
+      commentId: commentId + 1,
       comments: [
         ...comments,
         {
-          id: comments.length + 1,
+          id: commentId.toString(),
           writer: this.props.userName,
           content: inputComment,
           tagId: '',

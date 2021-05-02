@@ -20,10 +20,10 @@ class Comment extends Component {
 
   render() {
     const { isLiked } = this.state;
-    const { key, writer, content, tagId } = this.props;
+    const { writer, content, tagId } = this.props;
 
     return (
-      <p className="feed__comment align-item-center" key={key}>
+      <p className="feed__comment align-item-center">
         <span className="user-name">{writer}</span>
         <a href="#">{tagId ? `@${tagId}` : ''}</a>
         {content}
