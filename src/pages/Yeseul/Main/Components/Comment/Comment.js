@@ -31,16 +31,14 @@ class Comment extends React.Component {
         {content}
         <button
           type="button"
-          className="delete-btn js-delete-btn"
+          className="delete-btn"
           onClick={this.deleteComment}
         >
           x
         </button>
         <button
           className={
-            isLiked
-              ? 'like-btn align-right js-like-btn clicked'
-              : 'like-btn align-right js-like-btn'
+            isLiked ? 'like-btn align-right clicked' : 'like-btn align-right '
           }
           onClick={this.likeComment}
         >

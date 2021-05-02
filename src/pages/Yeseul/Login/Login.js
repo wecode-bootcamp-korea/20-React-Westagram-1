@@ -33,25 +33,22 @@ class LoginYeseul extends React.Component {
       <main className="login give-border">
         <h1 className="logo">westagram</h1>
         <form className="login-form">
-          <div className="login-form__input-box js-input-box">
+          <div className="login-form__input-box">
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               value={valueId}
-              className="js-input-id"
               onChange={this.handleIdInput}
             />
             <input
               type="password"
               placeholder="비밀번호"
               value={valuePw}
-              className="js-input-pw"
               onChange={this.handlePwInput}
             />
           </div>
           <button
             type="button"
-            className="js-login-btn"
             onClick={this.goToMain}
             disabled={!(checkId.test(valueId) && valuePw.length > 5)}
           >

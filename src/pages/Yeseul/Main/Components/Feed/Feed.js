@@ -93,7 +93,7 @@ class Feed extends React.Component {
             <span>{contents.description}</span>
           </p>
         </div>
-        <div className="feed__comments js-comments">
+        <div className="feed__comments">
           {comments.map(comment => (
             <Comment
               key={comment.id}
