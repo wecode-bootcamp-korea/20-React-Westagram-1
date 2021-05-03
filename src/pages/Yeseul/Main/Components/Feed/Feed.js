@@ -52,6 +52,14 @@ class Feed extends Component {
     });
   };
 
+  deleteComment = clickedId => {
+    const { comments } = this.state;
+    this.setState({
+      ...this.state,
+      comments: comments.filter(comment => comment.id !== clickedId),
+    });
+  };
+
   render() {
     const { inputComment, comments } = this.state;
     const { writer, contents } = this.props;
@@ -99,9 +107,8 @@ class Feed extends Component {
           {comments.map(comment => (
             <Comment
               key={comment.id}
-              writer={comment.writer}
-              content={comment.content}
-              tagId={comment.tagId}
+              info={comment}
+              handleClick={this.deleteComment}
             />
           ))}
         </div>

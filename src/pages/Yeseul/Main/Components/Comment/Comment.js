@@ -10,8 +10,9 @@ class Comment extends Component {
     };
   }
 
-  deleteComment = e => {
-    e.target.parentNode.remove();
+  handleClick = e => {
+    const { handleClick } = this.props;
+    handleClick(e.target.id);
   };
 
   likeComment = () => {
@@ -20,17 +21,18 @@ class Comment extends Component {
 
   render() {
     const { isLiked } = this.state;
-    const { writer, content, tagId } = this.props;
+    const { info } = this.props;
 
     return (
       <p className="feed__comment align-item-center">
-        <span className="user-name">{writer}</span>
-        <a href="#">{tagId ? `@${tagId}` : ''}</a>
-        {content}
+        <span className="user-name">{info.writer}</span>
+        <a href="#">{info.tagId ? `@${info.tagId}` : ''}</a>
+        {info.content}
         <button
           type="button"
+          id={info.id}
           className="delete-btn"
-          onClick={this.deleteComment}
+          onClick={this.handleClick}
         >
           x
         </button>
