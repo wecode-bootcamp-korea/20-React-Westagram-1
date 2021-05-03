@@ -8,17 +8,15 @@ class LoginYeseul extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      valueId: '',
-      valuePw: '',
+      inputId: '',
+      inputPw: '',
     };
   }
 
-  handleIdInput = e => {
-    this.setState({ valueId: e.target.value });
-  };
-
-  handlePwInput = e => {
-    this.setState({ valuePw: e.target.value });
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value }, () => {
+      console.log(e.target, e.target.name, e.target.value);
+    });
   };
 
   goToMain = () => {
@@ -26,7 +24,7 @@ class LoginYeseul extends Component {
   };
 
   render() {
-    const { valueId, valuePw } = this.state;
+    const { inputId, inputPw } = this.state;
     const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
 
     return (
@@ -36,21 +34,23 @@ class LoginYeseul extends Component {
           <div className="login-form__input-box">
             <input
               type="text"
+              name="inputId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={valueId}
-              onChange={this.handleIdInput}
+              value={inputId}
+              onChange={this.handleInput}
             />
             <input
               type="password"
+              name="inputPw"
               placeholder="비밀번호"
-              value={valuePw}
-              onChange={this.handlePwInput}
+              value={inputPw}
+              onChange={this.handleInput}
             />
           </div>
           <button
             type="button"
             onClick={this.goToMain}
-            disabled={!(checkId.test(valueId) && valuePw.length > 5)}
+            disabled={!(checkId.test(inputId) && inputPw.length > 5)}
           >
             로그인
           </button>
