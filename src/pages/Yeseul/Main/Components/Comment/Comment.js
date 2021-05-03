@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Comment.scss';
 
 class Comment extends Component {
@@ -26,7 +26,7 @@ class Comment extends Component {
     return (
       <p className="feed__comment align-item-center">
         <span className="user-name">{info.writer}</span>
-        <a href="#">{info.tagId ? `@${info.tagId}` : ''}</a>
+        <Link to="/main-yeseul">{info.tagId ? `@${info.tagId}` : ''}</Link>
         {info.content}
         <button
           type="button"

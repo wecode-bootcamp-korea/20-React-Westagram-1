@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import User from '../User/User';
 import Comment from '../Comment/Comment';
 import IconButton from '../Button/IconButton';
@@ -77,7 +76,7 @@ class Feed extends Component {
         </header>
         <div className="feed__image">
           <img
-            alt={`photo by ${writer.name} on ${contents.date}`}
+            alt={`by ${writer.name} on ${contents.date}`}
             src={contents.postedImage}
           />
         </div>
@@ -96,7 +95,7 @@ class Feed extends Component {
           />
         </div>
         <p className="feed__likes-number">
-          <a>{`좋아요 ${contents.likesNum}개`}</a>
+          <Link to="/main-yeseul">{`좋아요 ${contents.likesNum}개`}</Link>
         </p>
         <div className="feed__description">
           <p>

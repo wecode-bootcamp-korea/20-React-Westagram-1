@@ -1,46 +1,60 @@
 @import './variable.scss';
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: $bg-light-grey;
-	font-size: 14px;
+  background-color: $bg-light-grey;
+  font-size: 14px;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 a {
-	color: $font--dark-blue;
+  color: $font--dark-blue;
 }
 
 input {
-	width: 100%;
+  width: 100%;
 }
 
 input[type='submit'] {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 button {
-	display: block;
-	padding: 8px;
-	cursor: pointer;
+  display: block;
+  cursor: pointer;
 }
 
-button:disabled, input:disabled {
-	opacity: .3;
-    pointer-events: none;
+button:disabled,
+input:disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .give-border {
-    border: 1px solid $main-border;
-    background-color: #fff;
+  border: 1px solid $main-border;
+  background-color: #fff;
 }
 
 .logo {
-	font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
+}
+
+.align-item-center {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-right {
+  margin-left: auto;
 }

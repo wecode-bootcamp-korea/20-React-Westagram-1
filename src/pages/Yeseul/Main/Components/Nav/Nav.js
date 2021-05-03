@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import IconButton from '../Button/IconButton';
 import './Nav.scss';
 
@@ -21,12 +21,12 @@ class Nav extends Component {
           </form>
           <ul className="nav__menu">
             <li>
-              <a href="https://www.instagram.com/explore/">
+              <Link to="https://www.instagram.com/explore/">
                 <img
                   alt="탐색"
                   src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
                 />
-              </a>
+              </Link>
             </li>
             <li>
               <button type="button" className="like-button">

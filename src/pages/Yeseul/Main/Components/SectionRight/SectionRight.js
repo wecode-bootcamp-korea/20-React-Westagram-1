@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import UserList from '../UserList/UserList';
 import './SectionRight.scss';
 
@@ -11,7 +11,7 @@ class SectionRight extends Component {
       <section className="sectionRight give-border">
         <div className="title space-between">
           <span>{title}</span>
-          <a href="#">모두 보기</a>
+          <Link to="/main-yeseul">모두 보기</Link>
         </div>
         <UserList users={users}>{children}</UserList>
       </section>

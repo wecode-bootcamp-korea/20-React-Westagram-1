@@ -8,6 +8,7 @@
 
   .title {
     padding: 8px 0;
+    font-weight: 600;
 
     span {
       color: $font--grey;
@@ -19,9 +20,17 @@
       font-size: 12px;
     }
   }
-}
+  button {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    color: $btn--blue;
 
-.follow {
-  margin-right: -8px;
-  width: auto;
+    &.follow {
+      margin-right: -8px;
+      width: auto;
+    }
+  }
 }

@@ -27,9 +27,15 @@
   }
 
   &__btns {
-    display:flex;
+    display: flex;
     margin-top: 4px;
     padding: 0 8px;
+
+    button {
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__likes-number {
@@ -70,4 +76,3 @@
     }
   }
 }
-;

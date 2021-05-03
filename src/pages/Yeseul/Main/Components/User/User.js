@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './User.scss';
 
 class User extends Component {
@@ -8,13 +8,13 @@ class User extends Component {
 
     return (
       <div className="user align-item-center">
-        <a href="#" className={`profile-image--${size}`}>
+        <Link to="/main-yeseul" className={`profile-image--${size}`}>
           <img alt={`${user.name}님의 프로필 사진`} src={user.profileImage} />
-        </a>
+        </Link>
         <div>
-          <a href="#" className="user-name">
+          <Link to="/main-yeseul" className="user-name">
             {user.name}
-          </a>
+          </Link>
           {detailInfo}
         </div>
         {children}

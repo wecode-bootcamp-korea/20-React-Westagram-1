@@ -1,11 +1,8 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import Nav from './Components/Nav/Nav';
-import User from './Components/User/User';
 import Feed from './Components/Feed/Feed';
+import User from './Components/User/User';
 import SectionRight from './Components/SectionRight/SectionRight';
-import '../../../Styles/Yeseul/base.scss';
 import './Main.scss';
 
 class MainYeseul extends Component {
@@ -87,9 +84,9 @@ class MainYeseul extends Component {
     const { user, feeds, stories, recommendations } = this.state;
 
     return (
-      <>
+      <div className="main">
         <Nav />
-        <main role="main">
+        <main>
           <section className="feeds">
             {feeds.map(feed => (
               <Feed
@@ -117,7 +114,7 @@ class MainYeseul extends Component {
             </SectionRight>
           </div>
         </main>
-      </>
+      </div>
     );
   }
 }
