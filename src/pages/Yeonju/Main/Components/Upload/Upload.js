@@ -3,7 +3,8 @@ import './Upload.scss';
 import '../../../../../Styles/Yeonju/reset.scss';
 import '../../../../../Styles/Yeonju/common.scss';
 
-import Comment from '../Comment/Comment';
+import Comment from '../Comment/Comment'; // Comment 컴포넌트 import
+import COMMENTDATA from './commentData'; // MockData import
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +26,28 @@ class Upload extends React.Component {
       commentValue: '',
       commentList: [],
       value: '',
+      data: [],
     };
+  }
+
+  // // Mock Data js파일로 관리 시 componentDidMount() 함수
+  // componentDidMount() {
+  //   this.setState({
+  //     commentList: COMMENTDATA,
+  //   });
+  // }
+
+  //Mock Data json파일로 관리 시 componentDidMount() 함수
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Yeonju/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
   }
 
   handleCommentInput = e => {
@@ -111,7 +133,12 @@ class Upload extends React.Component {
                 <span className="comment_content">너무 예뻐요~~</span>
               </li>
               {this.state.commentList.map(commentElement => {
-                return <Comment comment={commentElement} />;
+                return (
+                  <Comment
+                    userName={commentElement.userName}
+                    comment={commentElement.content}
+                  />
+                );
               })}
             </form>
             <div className="feeds_upload_time">
