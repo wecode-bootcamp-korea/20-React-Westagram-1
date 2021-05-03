@@ -11,22 +11,23 @@ class Feed extends Component {
     super(props);
     this.state = {
       inputComment: '',
-      commentId: 3,
-      comments: [
-        {
-          id: '1',
-          writer: 'objental',
-          content: '사이트 주방 또는 데코 카테고리에서 상품 확인 가능하세요😊',
-          tagId: '5write',
-        },
-        {
-          id: '2',
-          writer: 'jerrysmarket.official',
-          content: '와 너무 예뻐요',
-          tagId: '',
-        },
-      ],
+      commentId: 0,
+      comments: [],
     };
+  }
+
+  componentDidMount() {
+    const { feedId } = this.props;
+    fetch('http://localhost:3000/data/Yeseul/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentId: data.length + 1,
+          comments: data.filter(comment => comment.feedId === feedId),
+        });
+      });
   }
 
   handleInput = e => {
