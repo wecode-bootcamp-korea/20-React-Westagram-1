@@ -101,7 +101,20 @@ class Main extends React.Component {
         },
       ],
       storyRight: 0,
+      articleData: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Doeun/articleData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          articleData: data,
+        });
+      });
   }
 
   goToLogin = () => {
@@ -156,7 +169,18 @@ class Main extends React.Component {
                 ))}
               </div>
             </div>
-            <Article />
+            {this.state.articleData.map((a, index) => (
+              <Article
+                key={index}
+                index={index}
+                profileImg={a.profileImg}
+                id={a.id}
+                feedImg={a.feedImg}
+                saySomething={a.saySomething}
+                hour={a.hour}
+                likes={a.likes}
+              />
+            ))}
           </main>
           <SideBar USERS={this.state.USERS} />
         </div>

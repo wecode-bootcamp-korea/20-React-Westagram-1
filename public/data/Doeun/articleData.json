@@ -1,0 +1,26 @@
+[
+  {
+    "profileImg": "images/Doeun/profile.jpg",
+    "id": "do.silv",
+    "feedImg": "images/Doeun/feedimg1.jpg",
+    "saySomething": "빵 조아 🍰🥯🥞🍩🍪🍞🥐🥖🥨",
+    "hour": 1,
+    "likes": 19
+  },
+  {
+    "profileImg": "images/Doeun/cafeknotted.jpg",
+    "id": "cafeknotted",
+    "feedImg": "images/Doeun/feedimg2.jpg",
+    "saySomething": "노티드 최고>.< 🥯🍩",
+    "hour": 2,
+    "likes": 32
+  },
+  {
+    "profileImg": "images/Doeun/profile.jpg",
+    "id": "do.silv",
+    "feedImg": "images/Doeun/feedimg3.jpg",
+    "saySomething": "여행가고싶당 🌴🍸",
+    "hour": 4,
+    "likes": 25
+  }
+]

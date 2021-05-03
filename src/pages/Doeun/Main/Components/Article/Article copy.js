@@ -20,7 +20,7 @@ class Article extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          commentList: data[this.props.index],
+          commentList: data,
         });
       });
   }
@@ -62,14 +62,14 @@ class Article extends React.Component {
           </div>
         </div>
         <img alt="article image" src={this.props.feedImg} />
-        <UnderBar likes={this.props.likes} />
+        <UnderBar />
         <div className="contents">
           <div className="blahblah">
             <p className="id">do.silv </p>
             <p>{this.props.saySomething}</p>
           </div>
           <p className="gray ago">{this.props.hour}시간 전</p>
-          {this.state.commentList.map((c, index) => (
+          {this.state.commentList[].map((c, index) => (
             <Comment
               id={c.id}
               comment={c.comment}

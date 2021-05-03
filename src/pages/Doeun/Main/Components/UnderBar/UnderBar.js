@@ -46,7 +46,8 @@ class UnderBar extends React.Component {
         </div>
         <p className="bold" id="likes">
           {' '}
-          좋아요 {this.state.redLike ? 20 : 19}개
+          좋아요 {this.state.redLike ? this.props.likes + 1 : this.props.likes}
+          개
         </p>
       </div>
     );

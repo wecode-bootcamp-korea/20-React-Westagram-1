@@ -10,8 +10,8 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="blahblah">
-        <p className="id">{this.props.c.id} </p>
-        <p>{this.props.c.comment}</p>
+        <p className="id">{this.props.id} </p>
+        <p>{this.props.comment}</p>
         <img
           alt="comment ellipsis"
           src="images/Doeun/dot.png"
