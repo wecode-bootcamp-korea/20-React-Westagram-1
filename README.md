@@ -2,8 +2,7 @@
 
 ## 프로젝트 내용
 - React를 사용한 Instagram clone
-- CRA를 사용한 초기 세팅
-- 4명의 팀원들이 공동 component, scss 사용
+- CRA를 사용한 초기 세
 - git을 사용한 첫 번째 협업
 
 ## 프로젝트 기간
