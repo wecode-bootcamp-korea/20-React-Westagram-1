@@ -8,13 +8,27 @@ class Feeds extends React.Component {
     this.state = {
       NewReply: '',
       ReplyList: [{ Content: '' }],
+      product: [],
     };
+  }
+  componentDidMount() {
+    fetch('http://localhost:3000/data/Hwisung/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ product: res });
+      });
   }
 
   addReply = () => {
     let ReplyArr = this.state.ReplyList;
-    ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
-    this.setState({ NewReply: '', ReplyList: ReplyArr });
+    if (this.state.NewReply === '') {
+      alert('댓글을 입력해주세요');
+    } else {
+      ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
+      this.setState({ NewReply: '', ReplyList: ReplyArr });
+    }
   };
 
   addReplyEnter = event => {
@@ -29,23 +43,25 @@ class Feeds extends React.Component {
   };
 
   render() {
+    const { commentValue } = this.state;
+    console.log(commentValue);
     return (
       <>
         <div class="Feeds">
-          <article class="feed">
-            <div class="feed_account">
-              <div id="feed_account">
+          <article class="Feed">
+            <div class="FeedAccount">
+              <div id="FeedAccount">
                 <img src="/images/Hwisung/netflix.png" alt="넷플릭스" />
               </div>
             </div>
-            <div class="feed_img">
-              <img
-                src="/images/Hwisung/feedimg.png"
-                class="feed_img"
-                alt="피드내용"
-              />
-            </div>
-            <div class="status">
+            {/* <div class="feed_img"> */}
+            <img
+              src="/images/Hwisung/feedimg.png"
+              class="feed_img"
+              alt="피드내용"
+            />
+            {/* </div> */}
+            <div class="Status">
               <img
                 class="status_like"
                 src="/images/Hwisung/like.png"
@@ -55,25 +71,25 @@ class Feeds extends React.Component {
               <img src="/images/Hwisung/dm.png" alt="메세지" />
               <img src="/images/Hwisung/share.png" alt="공유하기" />
             </div>
-            <div class="whoLike">위코드님 외 10명이조아함</div>
-            <div class="reply_list">
-              <ul class="reply_list_all">
+            <div class="WhoLike">위코드님 외 10명이조아함</div>
+            <div class="ReplyList">
+              <ul class="ReplyListAll">
                 <Reply ReplyList={this.state.ReplyList} />
               </ul>
             </div>
-            <div class="reply_when">5분전</div>
+            <div class="ReplyWhen">5분전</div>
             <input
               type="text"
               class="reply"
               onChange={this.writeReply}
               onKeyPress={this.addReplyEnter}
-              placeholder="댓글 달기..."
+              placeholder="댓글달기"
             />
-            <button class="post" onClick={this.addReply}>
+            <button class="Post" onClick={this.addReply}>
               게시
             </button>
-            <button class="iLike">조아여</button>
-            <button class="del">삭제</button>
+            <button class="Like">조아여</button>
+            <button class="Del">삭제</button>
           </article>
         </div>
       </>

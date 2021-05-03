@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "userName":"wecode",
+        "content":"welcome to world best coding bootcamp"
+    },
+    {
+        "id":2,
+        "userName":"hwisungkim",
+        "content":"i'm getting sleepy"
+    },
+    {
+        "id":3,
+        "userName":"dog",
+        "content":"bowWow"
+    }
+
+]

@@ -14,7 +14,7 @@ class LoginHwisung extends React.Component {
     };
   }
   goToMain = () => {
-    this.props.history.push('/Main'); //컴포넌트가 아니라 경로
+    this.props.history.push('/main-hwisung'); //컴포넌트가 아니라 경로
   };
 
   handleIdInput = event => {

@@ -19,8 +19,8 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/login-doeun" component={LoginDoeun} />
           <Route exact path="/main-doeun" component={MainDoeun} />
-          <Route exact path="/" component={LoginHwisung} />
-          <Route exact path="/Main" component={MainHwisung} />
+          <Route exact path="/login-hwisung" component={LoginHwisung} />
+          <Route exact path="/main-hwisung" component={MainHwisung} />
           <Route exact path="/login-yesl" component={LoginYeseul} />
           <Route exact path="/main-yesl" component={MainYeseul} />
           <Route exact path="/login-yeonju" component={LoginYeonju} />
