@@ -14,9 +14,7 @@ class LoginYeseul extends Component {
   }
 
   handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value }, () => {
-      console.log(e.target, e.target.name, e.target.value);
-    });
+    this.setState({ [e.target.name]: e.target.value }, () => {});
   };
 
   goToMain = () => {
