@@ -3,6 +3,49 @@ body {
   justify-content: center;
   background-color: #f2f2f2;
 }
+.Login {
+  .LoginBtn {
+    border: none;
+    padding: 10px;
+    width: 61%;
+    border-radius: 5px;
+    background-color: #c5e1fc;
+    font-size: 15px;
+    color: white;
+  }
+    
+    .LoginBtnOn{
+      border: none;
+    padding: 10px;
+    width: 61%;
+    border-radius: 5px;
+    background-color: #3A34FF;
+    font-size: 15px;
+    color: white;
+    }
+}
+
+
+.Login {
+  .id_input {
+    padding: 15px;
+    width: 60%;
+    border: solid 1px #e2e3e3;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 13px;
+  }
+
+  .pw_input {
+    padding: 15px;
+    margin-top: -30px;
+    width: 60%;
+    border: solid 1px #e2e3e3;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 13px;
+  }
+}
 
 .Login {
   display: flex;

@@ -6,22 +6,24 @@ class Aside extends React.Component {
     return (
       <>
         <div class="Aside">
-          <div class="profile">
+          <div class="Profile">
             <div>
               <img
-                class="wecode_img"
+                class="ProfileImg"
                 src="/images/Hwisung/wecode.png"
                 alt="프로필"
               />
             </div>
-            <div class="wecode_info">
-              <div class="wecode_id">wecode_bootcamp</div>
-              <div class="wecode_name">Wecode | 위코드</div>
+            <div class="ProfileInfo">
+              <div class="ProfileId">wecode_bootcamp</div>
+              <div class="ProfileName">Wecode | 위코드</div>
             </div>
           </div>
           <div class="story_list">
-            <span class="story">스토리</span>
-            <span class="seeAll_1">모두보기</span>
+            <div class="StoryAll">
+              <span class="story">스토리</span>
+              <span class="seeAll_1">모두보기</span>
+            </div>
             <div>
               <img
                 src="/images/Hwisung/travelreason.png"

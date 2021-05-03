@@ -1,7 +1,33 @@
 import React from 'react';
+import Reply from '../Reply/Reply';
 import './Feeds.scss';
 
 class Feeds extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      NewReply: '',
+      ReplyList: [{ Content: '' }],
+    };
+  }
+
+  addReply = () => {
+    let ReplyArr = this.state.ReplyList;
+    ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
+    this.setState({ NewReply: '', ReplyList: ReplyArr });
+  };
+
+  addReplyEnter = event => {
+    if (event.key === 'Enter') {
+      this.addReply();
+      event.target.value = '';
+    }
+  };
+
+  writeReply = event => {
+    this.setState({ NewReply: event.target.value });
+  };
+
   render() {
     return (
       <>
@@ -31,11 +57,21 @@ class Feeds extends React.Component {
             </div>
             <div class="whoLike">위코드님 외 10명이조아함</div>
             <div class="reply_list">
-              <ul class="reply_list_all"></ul>
+              <ul class="reply_list_all">
+                <Reply ReplyList={this.state.ReplyList} />
+              </ul>
             </div>
             <div class="reply_when">5분전</div>
-            <input type="text" class="reply" placeholder="댓글 달기..." />
-            <button class="post">게시</button>
+            <input
+              type="text"
+              class="reply"
+              onChange={this.writeReply}
+              onKeyPress={this.addReplyEnter}
+              placeholder="댓글 달기..."
+            />
+            <button class="post" onClick={this.addReply}>
+              게시
+            </button>
             <button class="iLike">조아여</button>
             <button class="del">삭제</button>
           </article>

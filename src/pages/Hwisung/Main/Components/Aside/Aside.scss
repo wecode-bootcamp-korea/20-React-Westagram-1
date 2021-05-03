@@ -6,30 +6,32 @@
   height: 500px;
   background-color: #f3f3f3;
 
-  .profile {
+  .Profile {
     display: flex;
     width: 100%;
     height: 50px;
     background-color: #f3f3f3;
+    padding-top: 10px;
 
-    .wecode_img {
+    .ProfileImg {
       width: 40px;
       height: 40px;
       border-radius: 100%;
     }
 
-    .wecode_info {
+    .ProfileInfo {
       display: flex;
       flex-direction: column;
       font-family: sans-serif;
-      margin-left: 10px;
+      margin-left: 20px;
+      margin-top: 5px;
 
-      .wecode_name {
-        color: #868787;
+      .ProfileId {
+        font-size: 12px;
       }
 
-      :first-child:first-child {
-        font-size: 10px;
+      .ProfileName {
+        color: #868787;
       }
     }
   }
