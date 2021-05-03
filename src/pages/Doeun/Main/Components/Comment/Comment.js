@@ -8,20 +8,23 @@ class Comment extends React.Component {
   }
 
   render() {
+    const { like } = this.state;
+    const { id, comment, index, setComment, commentList } = this.props;
+
     return (
       <div className="blahblah">
-        <p className="id">{this.props.id} </p>
-        <p>{this.props.comment}</p>
+        <p className="id">{id} </p>
+        <p>{comment}</p>
         <img
           alt="comment ellipsis"
           src="images/Doeun/dot.png"
           id="smalldot"
-          key={this.props.index}
+          key={index}
           onClick={() => {
             if (window.confirm('삭제하시겠습니까?')) {
-              let newList = [...this.props.commentList];
-              newList.splice(this.props.index, 1);
-              this.props.setComment(newList);
+              let newList = [...commentList];
+              newList.splice(index, 1);
+              setComment(newList);
             }
           }}
         />
@@ -36,7 +39,7 @@ class Comment extends React.Component {
         <img
           alt="liked comment"
           src="images/Doeun/redheart.png"
-          className={`likeComment liked ${this.state.like ? '' : 'hide'}`}
+          className={`likeComment liked ${like ? '' : 'hide'}`}
           onClick={() => {
             this.setState({ like: false });
           }}

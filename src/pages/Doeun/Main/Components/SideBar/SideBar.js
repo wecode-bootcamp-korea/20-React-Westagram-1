@@ -3,7 +3,7 @@ import './SideBar.scss';
 import SideFooter from '../SideFooter/SideFooter';
 
 function SideBar(props) {
-  const recommendUsers = props.USERS.slice(6, 11);
+  const recommendUsers = props.users.slice(6, 11);
 
   return (
     <div className="sidebar">

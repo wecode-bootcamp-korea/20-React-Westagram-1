@@ -48,39 +48,42 @@ class Article extends React.Component {
   };
 
   render() {
+    const { commentList, commentValue } = this.state;
+    const { profileImg, id, feedImg, likes, saySomething, hour } = this.props;
     return (
       <article>
         <div className="header">
           <div className="profile">
-            <img alt="my profile image" src={this.props.profileImg} />
+            <img alt="my profile image" src={profileImg} />
           </div>
           <div className="id">
-            <p>{this.props.id}</p>
+            <p>{id}</p>
           </div>
           <div className="dots">
             <img alt="ellipsis" src="images/Doeun/dot.png" />
           </div>
         </div>
-        <img alt="article image" src={this.props.feedImg} />
-        <UnderBar likes={this.props.likes} />
+        <img alt="article image" src={feedImg} />
+        <UnderBar likes={likes} />
         <div className="contents">
           <div className="blahblah">
-            <p className="id">do.silv </p>
-            <p>{this.props.saySomething}</p>
+            <p className="id">{id} </p>
+            <p>{saySomething}</p>
           </div>
-          <p className="gray ago">{this.props.hour}시간 전</p>
-          {this.state.commentList.map((c, index) => (
+          <p className="gray ago">{hour}시간 전</p>
+          {commentList.map((c, index) => (
             <Comment
+              key={index}
               id={c.id}
               comment={c.comment}
-              key={index}
-              commentList={this.state.commentList}
+              isliked={c.isliked}
+              commentList={commentList}
               setComment={this.setComment}
             />
           ))}
         </div>
         <CommentBar
-          commentValue={this.state.commentValue}
+          commentValue={commentValue}
           setInput={this.setInput}
           addComment={this.addComment}
         />

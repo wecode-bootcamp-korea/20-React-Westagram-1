@@ -48,6 +48,8 @@ class LoginBox extends React.Component {
   };
 
   render() {
+    const { id, pw, type, warning, validId } = this.state;
+
     return (
       <div className="loginBox">
         <div className="logo">
@@ -56,11 +58,11 @@ class LoginBox extends React.Component {
         <div className="login">
           <form action="/main-doeun" onSubmit={this.checkValidation}>
             <div>
-              <label htmlFor="id" className={this.state.id ? 'typing' : ''}>
+              <label htmlFor="id" className={id ? 'typing' : ''}>
                 전화번호, 사용자 이름 또는 이메일
               </label>
               <input
-                className={this.state.id ? 'typing' : ''}
+                className={id ? 'typing' : ''}
                 onInput={this.handleInputId}
                 type="text"
                 id="id"
@@ -69,30 +71,26 @@ class LoginBox extends React.Component {
             </div>
             <div>
               <input
-                className={this.state.pw ? 'typing' : ''}
+                className={pw ? 'typing' : ''}
                 onChange={this.handleInputPw}
-                type={this.state.type}
+                type={type}
                 id="pw"
                 name="pw"
               />
-              <label htmlFor="pw" className={this.state.pw ? 'typing' : ''}>
+              <label htmlFor="pw" className={pw ? 'typing' : ''}>
                 비밀번호
               </label>
               <p
-                className={'showPw ' + (this.state.pw ? 'show' : '')}
+                className={'showPw ' + (pw ? 'show' : '')}
                 onClick={this.showPassword}
               >
-                {this.state.type === 'password' ? '비밀번호 표시' : '숨기기'}
+                {type === 'password' ? '비밀번호 표시' : '숨기기'}
               </p>
             </div>
             <div>
               <button
-                className={`loginBtn ${
-                  this.state.id && this.state.pw.length >= 6 ? 'active' : ''
-                }`}
-                disabled={
-                  this.state.id && this.state.pw.length >= 6 ? false : true
-                }
+                className={`loginBtn ${id && pw.length >= 6 ? 'active' : ''}`}
+                disabled={id && pw.length >= 6 ? false : true}
               >
                 로그인
               </button>
@@ -110,7 +108,7 @@ class LoginBox extends React.Component {
             </a>
           </div>
         </div>
-        <div className="invalid">{this.state.warning}</div>
+        <div className="invalid">{warning}</div>
         <div className="forgot">
           <a>비밀번호를 잊으셨나요?</a>
         </div>

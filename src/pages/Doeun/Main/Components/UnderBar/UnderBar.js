@@ -21,6 +21,9 @@ class UnderBar extends React.Component {
     }, 200);
   };
   render() {
+    const { like, redLike } = this.state;
+    const { likes } = this.props;
+
     return (
       <div className="underbar">
         <div className="tab">

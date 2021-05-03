@@ -20,7 +20,31 @@
     "id": "do.silv",
     "feedImg": "images/Doeun/feedimg3.jpg",
     "saySomething": "여행가고싶당 🌴🍸",
-    "hour": 4,
+    "hour": 5,
     "likes": 25
+  },
+  {
+    "profileImg": "images/Doeun/dlwlrma.jpg",
+    "id": "dlwlrma",
+    "feedImg": "images/Doeun/feedimg4.jpg",
+    "saySomething": "💐🌻🌷🌼🌺",
+    "hour": 8,
+    "likes": 15
+  },
+  {
+    "profileImg": "images/Doeun/saddlerhaus_bakery.jpg",
+    "id": "saddlerhaus_bakery",
+    "feedImg": "images/Doeun/feedimg5.jpg",
+    "saySomething": "크💜로💛플💚",
+    "hour": 12,
+    "likes": 76
+  },
+  {
+    "profileImg": "images/Doeun/roses_are_rosie.jpg",
+    "id": "roses_are_rosie",
+    "feedImg": "images/Doeun/feedimg6.jpg",
+    "saySomething": "hello i'm rose",
+    "hour": 20,
+    "likes": 872
   }
 ]
