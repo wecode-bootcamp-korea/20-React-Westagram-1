@@ -8,11 +8,9 @@ class Article extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentList: [{ id: 'wecode_bootcamp', comment: '맛있겠당', key: 0 }],
+      commentList: [{ id: 'wecode_bootcamp', comment: '맛있겠당' }],
       input: '',
     };
-
-    // let [input, setInput] = useState('');
   }
 
   addComment = () => {
@@ -62,7 +60,7 @@ class Article extends React.Component {
           {this.state.commentList.map((c, index) => (
             <Comment
               c={c}
-              index={index}
+              key={index}
               commentList={this.state.commentList}
               setComment={this.setComment}
             />
