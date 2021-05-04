@@ -77,7 +77,7 @@ class Main extends React.Component {
     const { users, storyRight, articleData } = this.state;
 
     return (
-      <div className="mainSass">
+      <div className="mainDoeun">
         <Nav users={this.state.users} />
         <div className="mainContainer">
           <main>

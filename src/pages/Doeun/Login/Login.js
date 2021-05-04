@@ -6,7 +6,7 @@ import Footer from './Components/Footer/Footer';
 class Login extends React.Component {
   render() {
     return (
-      <div className="loginSass">
+      <div className="loginDoeun">
         <div className="flexcontainer">
           <div className="iphone">
             <img alt="mobile instagram" src="images/Doeun/iphone.png" />
