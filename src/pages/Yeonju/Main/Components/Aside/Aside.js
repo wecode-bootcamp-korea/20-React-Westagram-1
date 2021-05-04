@@ -1,7 +1,5 @@
 import React from 'react';
 import './Aside.scss';
-import '../../../../../Styles/Yeonju/reset.scss';
-import '../../../../../Styles/Yeonju/common.scss';
 
 class Aside extends React.Component {
   render() {

@@ -1,0 +1,48 @@
+$bg-light-grey: #fafafa;
+$main-border: #dbdbdb;
+$border--lighten: #efefef;
+$border--darken: #5b5b5b;
+$border--gray: #a8a8a8;
+$main-font: #262626;
+$font--grey: #8e8e8e;
+$font--dark-blue: #01376b;
+$btn--blue: #0095f6;
+$btn--red: #ed4956;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: $bg-light-grey;
+  font-size: 14px;
+}
+a {
+  color: $font--dark-blue;
+}
+input {
+  width: 100%;
+}
+input[type='submit'] {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+.give-border {
+  border: 1px solid $main-border;
+  background-color: #fff;
+}
+.logo {
+  font-family: 'Lobster', cursive;
+}
+.align-item-center {
+  display: flex;
+  align-items: center;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.align-right {
+  margin-left: auto;
+}

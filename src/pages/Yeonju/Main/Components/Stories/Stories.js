@@ -1,7 +1,5 @@
 import React from 'react';
 import './Stories.scss';
-import '../../../../../Styles/Yeonju/reset.scss';
-import '../../../../../Styles/Yeonju/common.scss';
 
 class Stories extends React.Component {
   render() {

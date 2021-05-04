@@ -1,7 +1,5 @@
 import React from 'react';
 import './Nav.scss';
-import '../../../../../Styles/Yeonju/reset.scss';
-import '../../../../../Styles/Yeonju/common.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';

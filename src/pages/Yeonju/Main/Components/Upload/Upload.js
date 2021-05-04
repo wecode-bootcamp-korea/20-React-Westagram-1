@@ -1,7 +1,7 @@
 import React from 'react';
 import './Upload.scss';
-import '../../../../../Styles/Yeonju/reset.scss';
-import '../../../../../Styles/Yeonju/common.scss';
+// import '../../../../../Styles/Yeonju/reset.scss';
+// import '../../../../../Styles/Yeonju/common.scss';
 
 import Comment from '../Comment/Comment'; // Comment 컴포넌트 import
 import COMMENTDATA from './commentData'; // MockData import
@@ -26,7 +26,6 @@ class Upload extends React.Component {
       commentValue: '',
       commentList: [],
       value: '',
-      data: [],
     };
   }
 

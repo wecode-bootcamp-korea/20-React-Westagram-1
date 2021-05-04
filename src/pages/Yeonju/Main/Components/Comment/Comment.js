@@ -1,7 +1,5 @@
 import React from 'react';
 import './Comment.scss';
-import '../../../../../Styles/Yeonju/reset.scss';
-import '../../../../../Styles/Yeonju/common.scss';
 
 class Comment extends React.Component {
   render() {

@@ -1,7 +1,5 @@
 import React from 'react';
 import './MainYeonju.scss';
-import '../../../Styles/Yeonju/reset.scss';
-import '../../../Styles/Yeonju/common.scss';
 
 import Nav from './Components/Nav/Nav';
 import Upload from './Components/Upload/Upload';
