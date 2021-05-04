@@ -36,6 +36,7 @@ table {
   border-spacing: 0;
 }
 
+/* common style */
 a {
   text-decoration: none;
 }
@@ -45,6 +46,7 @@ button {
   background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 input {
