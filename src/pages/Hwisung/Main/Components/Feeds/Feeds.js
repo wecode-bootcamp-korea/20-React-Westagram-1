@@ -6,9 +6,8 @@ class Feeds extends React.Component {
   constructor() {
     super();
     this.state = {
-      NewReply: '',
-      ReplyList: [{ Content: '' }],
-      product: [],
+      commentList: [{}],
+      commentValue: '',
     };
   }
   componentDidMount() {
@@ -17,34 +16,47 @@ class Feeds extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        this.setState({ product: res });
+        this.setState({ commentList: res });
       });
   }
-
-  addReply = () => {
-    let ReplyArr = this.state.ReplyList;
-    if (this.state.NewReply === '') {
-      alert('댓글을 입력해주세요');
-    } else {
-      ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
-      this.setState({ NewReply: '', ReplyList: ReplyArr });
-    }
+  addComment = e => {
+    // e.preventDefault();
+    const { commentList, commentValue } = this.state;
+    this.setState({
+      commentList: commentList.concat({
+        id: commentList.length + 1,
+        userName: 'wecode',
+        content: commentValue,
+      }),
+    });
   };
+
+  // addReply = () => {
+  //   let ReplyArr = this.state.ReplyList;
+  //   if (this.state.NewReply === '') {
+  //     alert('댓글을 입력해주세요');
+  //   } else {
+  //     ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
+  //     this.setState({ NewReply: '', commentData: ReplyArr });
+  //   }
+  // };
 
   addReplyEnter = event => {
     if (event.key === 'Enter') {
-      this.addReply();
+      this.addComment();
       event.target.value = '';
     }
   };
 
-  writeReply = event => {
-    this.setState({ NewReply: event.target.value });
+  handleCommentValue = e => {
+    this.setState({
+      commentValue: e.target.value,
+    });
   };
 
   render() {
-    const { commentValue } = this.state;
-    console.log(commentValue);
+    const { commentList, commentValue } = this.state;
+
     return (
       <>
         <div class="Feeds">
@@ -74,18 +86,21 @@ class Feeds extends React.Component {
             <div class="WhoLike">위코드님 외 10명이조아함</div>
             <div class="ReplyList">
               <ul class="ReplyListAll">
-                <Reply ReplyList={this.state.ReplyList} />
+                {commentList.map(comment => {
+                  return <Reply />;
+                })}
               </ul>
             </div>
             <div class="ReplyWhen">5분전</div>
             <input
               type="text"
               class="reply"
-              onChange={this.writeReply}
+              onChange={this.handleCommentValue}
               onKeyPress={this.addReplyEnter}
               placeholder="댓글달기"
+              value={commentValue}
             />
-            <button class="Post" onClick={this.addReply}>
+            <button class="Post" onClick={this.addComment}>
               게시
             </button>
             <button class="Like">조아여</button>

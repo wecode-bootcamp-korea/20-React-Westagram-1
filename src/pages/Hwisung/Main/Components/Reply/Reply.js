@@ -2,13 +2,9 @@ import React from 'react';
 
 class Reply extends React.Component {
   render() {
-    return (
-      <>
-        {this.props.ReplyList.map(e => (
-          <li>{e.Content}</li>
-        ))}
-      </>
-    );
+    return <>{/* {this.props.map(e => (
+          <li>{e}</li>
+        ))} */}</>;
   }
 }
 
