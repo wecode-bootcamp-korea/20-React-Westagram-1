@@ -6,7 +6,7 @@ import './Nav.scss';
 class Nav extends Component {
   render() {
     return (
-      <nav>
+      <nav className="navYeseul">
         <div className="inner-nav">
           <h1>
             <IconButton

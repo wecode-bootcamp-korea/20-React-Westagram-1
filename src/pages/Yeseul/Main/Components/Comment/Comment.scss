@@ -1,4 +1,4 @@
-@import '../../../../../Styles/Yeseul/variable.scss';
+@import '../../../../../Styles/variable.scss';
 
 .feed__comment {
   position: relative;
@@ -16,14 +16,14 @@
     margin-top: -20px;
     color: $main-font;
     line-height: 24px;
-    opacity: .2;
+    opacity: 0.2;
   }
 
   &:hover .delete-btn {
     display: block;
 
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 

@@ -9,10 +9,6 @@ body {
   font-size: 14px;
 }
 
-img {
-  width: 100%;
-}
-
 a {
   color: $font--dark-blue;
 }
@@ -26,14 +22,7 @@ input[type='submit'] {
 }
 
 button {
-  display: block;
   cursor: pointer;
-}
-
-button:disabled,
-input:disabled {
-  opacity: 0.3;
-  pointer-events: none;
 }
 
 .give-border {
@@ -43,18 +32,4 @@ input:disabled {
 
 .logo {
   font-family: 'Lobster', cursive;
-}
-
-.align-item-center {
-  display: flex;
-  align-items: center;
-}
-
-.space-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-.align-right {
-  margin-left: auto;
 }

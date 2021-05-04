@@ -84,7 +84,7 @@ class MainYeseul extends Component {
     const { user, feeds, stories, recommendations } = this.state;
 
     return (
-      <div className="main">
+      <div className="mainYeseul">
         <Nav />
         <main>
           <section className="feeds">

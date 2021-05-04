@@ -12,7 +12,8 @@ class LoginYeseul extends Component {
   }
 
   handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value }, () => {});
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   goToMain = () => {
@@ -24,7 +25,7 @@ class LoginYeseul extends Component {
     const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
 
     return (
-      <main className="login give-border">
+      <main className="loginYeseul give-border">
         <h1 className="logo">westagram</h1>
         <form className="login-form">
           <div className="login-form__input-box">

@@ -1,11 +1,9 @@
-@import '../../../Styles/Yeseul/variable.scss';
+@import '../../../Styles/variable.scss';
 
-body {
+.mainYeseul {
   padding-top: 54px;
   line-height: 18px;
-}
 
-.main {
   main {
     display: flex;
     justify-content: center;
@@ -37,5 +35,35 @@ body {
         }
       }
     }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .align-item-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .align-right {
+    margin-left: auto;
+  }
+
+  button:disabled,
+  input:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  ul,
+  p {
+    margin: 0;
+    padding: 0;
   }
 }
