@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Stories.scss';
 
 class Stories extends React.Component {
@@ -8,14 +9,14 @@ class Stories extends React.Component {
         <div className="feeds_story">
           <ul className="feeds_story_list">
             <li>
-              <div className="gradient-wrap">
+              <div className="story_gradient_wrap">
                 <img
                   src="http://localhost:3000/images/Yeonju/yeonju.jpg"
                   alt="나의 프로필 사진"
                 />
               </div>
             </li>
-            <div className="gradient-wrap">
+            <div className="story_gradient_wrap">
               <li>
                 <img
                   src="http://localhost:3000/images/Yeonju/taeyeon.jpg"
@@ -23,7 +24,7 @@ class Stories extends React.Component {
                 />
               </li>
             </div>
-            <div className="gradient-wrap">
+            <div className="story_gradient_wrap">
               <li>
                 <img
                   src="http://localhost:3000/images/Yeonju/IU.png"
@@ -31,7 +32,7 @@ class Stories extends React.Component {
                 />
               </li>
             </div>
-            <div className="gradient-wrap">
+            <div className="story_gradient_wrap">
               <li>
                 <img
                   src="http://localhost:3000/images/Yeonju/haery.png"
@@ -39,7 +40,7 @@ class Stories extends React.Component {
                 />
               </li>
             </div>
-            <div className="gradient-wrap">
+            <div className="story_gradient_wrap">
               <li>
                 <img
                   src="http://localhost:3000/images/Yeonju/minkyung.png"

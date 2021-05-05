@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Aside.scss';
 
 class Aside extends React.Component {
@@ -9,8 +10,8 @@ class Aside extends React.Component {
           <header className="right_side_top">
             <img
               className="right_side_myprofile"
-              src="http://localhost:3000/images/Yeonju/yeonju.jpg"
               alt="나의 프로필 사진"
+              src="http://localhost:3000/images/Yeonju/yeonju.jpg"
             />
             <h1 className="right_side_myid"> yyeon_jju</h1>
             <button className="right_side_mybutton">
@@ -27,8 +28,8 @@ class Aside extends React.Component {
             <ul>
               <li className="right_side_recommend">
                 <img
-                  src="http://localhost:3000/images/Yeonju/taeyeon.jpg"
                   alt="태연 프로필 사진"
+                  src="http://localhost:3000/images/Yeonju/taeyeon.jpg"
                 />
                 <div className="recommend_id">taeyeon_ss</div>
                 <button>
@@ -37,8 +38,8 @@ class Aside extends React.Component {
               </li>
               <li className="right_side_recommend">
                 <img
-                  src="http://localhost:3000/images/Yeonju/IU.png"
                   alt="아이유 프로필 사진"
+                  src="http://localhost:3000/images/Yeonju/IU.png"
                 />
                 <div className="recommend_id">dlwlrma</div>
                 <button>
@@ -47,8 +48,8 @@ class Aside extends React.Component {
               </li>
               <li className="right_side_recommend">
                 <img
-                  src="http://localhost:3000/images/Yeonju/haery.png"
                   alt="이해리 프로필 사진"
+                  src="http://localhost:3000/images/Yeonju/haery.png"
                 />
                 <div className="recommend_id">dlgofl85</div>
                 <button>
@@ -57,8 +58,8 @@ class Aside extends React.Component {
               </li>
               <li className="right_side_recommend">
                 <img
-                  src="http://localhost:3000/images/Yeonju/minkyung.png"
                   alt="강민경 프로필 사진"
+                  src="http://localhost:3000/images/Yeonju/minkyung.png"
                 />
                 <div className="recommend_id">iammingki</div>
                 <button>

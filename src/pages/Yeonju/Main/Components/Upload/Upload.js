@@ -1,13 +1,9 @@
 import React from 'react';
-import './Upload.scss';
-// import '../../../../../Styles/Yeonju/reset.scss';
-// import '../../../../../Styles/Yeonju/common.scss';
-
-import Comment from '../Comment/Comment'; // Comment 컴포넌트 import
-import COMMENTDATA from './commentData'; // MockData import
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
+
+import Comment from '../Comment/Comment';
+
+import './Upload.scss';
 
 import {
   faPaperPlane,
@@ -29,14 +25,6 @@ class Upload extends React.Component {
     };
   }
 
-  // // Mock Data js파일로 관리 시 componentDidMount() 함수
-  // componentDidMount() {
-  //   this.setState({
-  //     commentList: COMMENTDATA,
-  //   });
-  // }
-
-  //Mock Data json파일로 관리 시 componentDidMount() 함수
   componentDidMount() {
     fetch('http://localhost:3000/data/Yeonju/commentData.json', {
       method: 'GET',
@@ -79,8 +67,6 @@ class Upload extends React.Component {
               <div>
                 <span className="feeds_uploader">yyeon_jju</span>
               </div>
-              {/* <i className="far fa-ellipsis-h"></i> */}
-              {/* <FontAwesomeIcon icon={faEllipsisH} className="far fa-ellipsis-h" /> */}
             </div>
             <div className="feeds_upload_image">
               <img
@@ -90,10 +76,6 @@ class Upload extends React.Component {
             </div>
             <div className="feeds_upload_icons">
               <div>
-                {/* <button><i className="far fa-heart buttonicon icon"></i></button>
-                    <button><i className="far fa-comment buttonicon icon"></i></button>
-                    <button> <i className="far fa-paper-plane buttonicon icon"></i></button>
-                    <button> <i className="far fa-bookmark buttonicon icon"></i></button> */}
                 <button>
                   <FontAwesomeIcon
                     icon={faHeart}
@@ -125,7 +107,6 @@ class Upload extends React.Component {
             <div className="feeds_upload_likes">
               <p className="count_likes">좋아요 3000개</p>
             </div>
-
             <form className="feeds_upload_comments">
               <li>
                 <span className="comment_writer">yyeon_jju</span>

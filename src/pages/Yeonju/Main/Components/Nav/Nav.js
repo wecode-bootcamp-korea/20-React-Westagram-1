@@ -1,30 +1,27 @@
 import React from 'react';
-import './Nav.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
-
 import {
   faPaperPlane,
   faCompass,
   faHeart,
-  // faEllipsisH,
+  faEllipsisH,
   faComment,
   faBookmark,
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 
+import './Nav.scss';
+
 class Nav extends React.Component {
   render() {
     return (
       <div className="Nav">
-        {/* <!-- main page top nav --> */}
         <nav className="page_top_nav">
           <div>
             <h1 className="page_name">westagram</h1>
             <div className="search">
               <div>
-                {/* <i className="fas fa-search icon"></i> */}
                 <FontAwesomeIcon
                   icon={faSearch}
                   className="fas fa-search icon"
@@ -33,10 +30,6 @@ class Nav extends React.Component {
               </div>
             </div>
             <div className="icon_right">
-              {/* <i className="fas fa-home icon"></i>
-            <i className="far fa-paper-plane icon"></i>
-            <i className="far fa-compass icon"></i>
-            <i className="far fa-heart icon"></i> */}
               <FontAwesomeIcon icon={faHome} className="fas fa-home icon" />
               <FontAwesomeIcon
                 icon={faPaperPlane}

@@ -1,6 +1,7 @@
 import React from 'react';
-import './LoginYeonju.scss';
 import { withRouter } from 'react-router-dom';
+
+import './LoginYeonju.scss';
 
 class LoginYeonju extends React.Component {
   constructor() {
@@ -12,21 +13,18 @@ class LoginYeonju extends React.Component {
     };
   }
   goToMain = () => {
-    this.props.history.push('/mainyeonju');
+    this.props.history.push('/main-yeonju');
   };
 
   handleIdInput = e => {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
 
   changeButton = () => {
     const { idValue, pwValue } = this.state;
-    idValue.includes('@') && pwValue.length >= 5
-      ? this.setState({ isActive: true })
-      : this.setState({ isActive: false });
+    this.setState({ isActive: idValue.includes('@') && pwValue.length >= 5 });
   };
 
   render() {
