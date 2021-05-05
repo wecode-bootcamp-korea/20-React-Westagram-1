@@ -20,11 +20,11 @@ class Feed extends Component {
     fetch('http://localhost:3000/data/Yeseul/commentData.json', {
       method: 'GET',
     })
-      .then(res => res.json())
-      .then(data => {
+      .then(comments => comments.json())
+      .then(comments => {
         this.setState({
-          commentId: data.length + 1,
-          comments: data.filter(comment => comment.feedId === feedId),
+          commentId: comments.length + 1,
+          comments: comments.filter(comment => comment.feedId === feedId),
         });
       });
   }

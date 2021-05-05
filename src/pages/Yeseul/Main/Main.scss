@@ -1,4 +1,4 @@
-@import '../../../Styles/variable.scss';
+@import '../../../Styles/common.scss';
 
 .mainYeseul {
   padding-top: 54px;
@@ -16,24 +16,6 @@
     .feeds {
       width: 100%;
       max-width: 610px;
-    }
-
-    .main-right {
-      position: sticky;
-      top: 84px;
-      margin-left: 30px;
-      width: 295px;
-      height: 0;
-
-      .user-profile {
-        padding: 0 8px;
-
-        button {
-          padding: 8px;
-          font-size: 12px;
-          color: $btn--blue;
-        }
-      }
     }
   }
 

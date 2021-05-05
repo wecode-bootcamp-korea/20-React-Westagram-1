@@ -1,8 +1,8 @@
-@import '../../../../../Styles/variable.scss';
+@import '../../../../../Styles/common.scss';
 
 .feed__comment {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 
   a {
     margin-right: 4px;

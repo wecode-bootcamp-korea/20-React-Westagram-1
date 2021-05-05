@@ -1,4 +1,4 @@
-@import '../../../../../Styles/variable.scss';
+@import '../../../../../Styles/common.scss';
 
 .feed {
   margin-bottom: 60px;
@@ -39,8 +39,8 @@
   }
 
   &__likes-number {
-    margin-bottom: 5px;
-    padding: 0 16px;
+    margin-bottom: 5px !important;
+    padding: 0 16px !important;
 
     a {
       color: $main-font;
