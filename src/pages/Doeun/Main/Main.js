@@ -32,30 +32,30 @@ class Main extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        let result = res.slice(this.state.preItems, this.state.items);
+        let dataToAdd = res.slice(this.state.preItems, this.state.items);
         this.setState({
-          articleData: [...this.state.articleData, ...result],
+          articleData: [...this.state.articleData, ...dataToAdd],
         });
       });
   };
 
   infiniteScroll = () => {
-    let scrollHeight = Math.max(
+    const scrollHeight = Math.max(
       document.documentElement.scrollHeight,
       document.body.scrollHeight
     );
-    let scrollTop = Math.max(
+    const scrollTop = Math.max(
       document.documentElement.scrollTop,
       document.body.scrollTop
     );
-    let clientHeight = document.documentElement.clientHeight;
+    const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + clientHeight >= scrollHeight) {
+    if (scrollTop >= scrollHeight - clientHeight) {
       this.setState({
         preItems: this.state.items,
         items: this.state.items + 1,
       });
-      this.componentDidMount();
+      this.getData();
     }
   };
 
