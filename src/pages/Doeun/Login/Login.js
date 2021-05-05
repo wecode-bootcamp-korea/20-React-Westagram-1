@@ -1,7 +1,7 @@
 import React from 'react';
-import './Login.scss';
 import LoginBox from './Components/LoginBox/LoginBox';
 import Footer from './Components/Footer/Footer';
+import './Login.scss';
 
 class Login extends React.Component {
   render() {

@@ -16,7 +16,7 @@ class Nav extends React.Component {
 
   search = e => {
     this.setState({
-      matchedUsers: this.props.users.filter((user, index) =>
+      matchedUsers: this.props.users.filter(user =>
         user.id.startsWith(e.target.value)
       ),
     });
@@ -36,14 +36,14 @@ class Nav extends React.Component {
               onClick={this.search}
               onInput={this.search}
             />
-            <i className="fas fa-search"></i>
+            <i className="fas fa-search" />
             <div className="searchList">
               <div className="idList">
                 {!matchedUsers.length ? (
                   <p>검색결과가 없습니다.</p>
                 ) : (
-                  matchedUsers.map((users, index) => (
-                    <div key={index} className="searchedUser">
+                  matchedUsers.map(users => (
+                    <div key={users.id} className="searchedUser">
                       <img alt="user's profile image" src={users.profileImg} />
                       <div className="userId">
                         <p className="id">{users.id}</p>
@@ -60,7 +60,7 @@ class Nav extends React.Component {
           <div className="icons">
             <img alt="home" src="images/Doeun/home.png" />
             <img alt="direct message" src="images/Doeun/dm.png" />
-            <i className="far fa-compass"></i>
+            <i className="far fa-compass" />
             <img alt="like" src="images/Doeun/heart.png" />
             <img className="profile" src="images/Doeun/profile.jpg" />
           </div>

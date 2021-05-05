@@ -90,7 +90,7 @@ class LoginBox extends React.Component {
             <div>
               <button
                 className={`loginBtn ${id && pw.length >= 6 ? 'active' : ''}`}
-                disabled={id && pw.length >= 6 ? false : true}
+                disabled={!id && pw.length >= 6}
               >
                 로그인
               </button>
@@ -102,16 +102,12 @@ class LoginBox extends React.Component {
             <div className="line"></div>
           </div>
           <div className="facebook">
-            <a>
-              <img alt="facebook logo" src="images/Doeun/facebook.png" />
-              Facebook으로 로그인
-            </a>
+            <img alt="facebook logo" src="images/Doeun/facebook.png" />
+            Facebook으로 로그인
           </div>
         </div>
         <div className="invalid">{warning}</div>
-        <div className="forgot">
-          <a>비밀번호를 잊으셨나요?</a>
-        </div>
+        <div className="forgot">비밀번호를 잊으셨나요?</div>
       </div>
     );
   }

@@ -15,6 +15,7 @@ class Main extends React.Component {
       preItems: 0,
       items: 2,
     };
+    this.F00 = 265;
   }
 
   componentDidMount() {
@@ -65,12 +66,12 @@ class Main extends React.Component {
 
   goRight = () => {
     if (this.state.storyRight < 765)
-      this.setState({ storyRight: this.state.storyRight + 265 });
+      this.setState({ storyRight: this.state.storyRight + this.F00 });
   };
 
   goLeft = () => {
     if (this.state.storyRight > 0)
-      this.setState({ storyRight: this.state.storyRight - 265 });
+      this.setState({ storyRight: this.state.storyRight - this.F00 });
   };
 
   render() {
@@ -82,21 +83,18 @@ class Main extends React.Component {
         <div className="mainContainer">
           <main>
             <div className="storyBox">
-              <i
-                className="fas fa-chevron-circle-left"
-                onClick={this.goLeft}
-              ></i>
+              <i className="fas fa-chevron-circle-left" onClick={this.goLeft} />
               <i
                 className="fas fa-chevron-circle-right"
                 onClick={this.goRight}
-              ></i>
+              />
               <div className="storySpan" style={{ right: storyRight }}>
-                {[...users].reverse().map((user, index) => (
-                  <div className="story" key={index}>
+                {[...users].reverse().map(user => (
+                  <div className="story" key={user.id}>
                     <div>
                       <img src="images/Doeun/storyring.png" id="storyring" />
                       <img
-                        alt="user's profile image"
+                        alt={`${user.id}'s profile image`}
                         src={'images/Doeun/' + user.id + '.jpg'}
                         id="storyprofile"
                       />
@@ -112,7 +110,7 @@ class Main extends React.Component {
             </div>
             {articleData.map((a, index) => (
               <Article
-                key={index}
+                key={a.id + a.likes}
                 index={index}
                 profileImg={a.profileImg}
                 id={a.id}

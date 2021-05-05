@@ -71,9 +71,9 @@ class Article extends React.Component {
             <p>{saySomething}</p>
           </div>
           <p className="gray ago">{hour}시간 전</p>
-          {commentList.map((c, index) => (
+          {commentList.map(c => (
             <Comment
-              key={index}
+              key={c.id + c.comment}
               id={c.id}
               comment={c.comment}
               isliked={c.isliked}

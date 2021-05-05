@@ -23,8 +23,8 @@ function SideBar(props) {
         <div className="recommend">
           <span className="gray bold">회원님을 위한 추천</span>
           <span className="twelve bold">모두 보기</span>
-          {recommendUsers.map((i, index) => (
-            <div key={index}>
+          {recommendUsers.map(i => (
+            <div key={i.id}>
               <div className="user">
                 <div className="profile">
                   <img
