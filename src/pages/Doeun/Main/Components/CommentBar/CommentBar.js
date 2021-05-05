@@ -1,11 +1,23 @@
 import React from 'react';
+import { debounce } from 'lodash';
 import './CommentBar.scss';
 
 class CommentBar extends React.Component {
   constructor() {
     super();
     this.state = { comment: '' };
+    this.debounceHandler = debounce(this.debounceHandler, 500);
   }
+
+  inputHandler = event => {
+    this.debounceHandler(event.target.value);
+    this.setState({ comment: event.target.value });
+  };
+
+  debounceHandler = value => {
+    console.log(value);
+    this.props.setInput(value);
+  };
 
   render() {
     return (
@@ -33,15 +45,12 @@ class CommentBar extends React.Component {
           <input
             type="text"
             placeholder="댓글 달기..."
-            onInput={e => {
-              this.setState({ comment: e.target.value });
-              this.props.setInput(e.target.value);
-            }}
+            onInput={this.inputHandler}
             value={this.state.comment}
           />
           <button
             className={this.state.comment ? 'active' : ''}
-            disabled={this.state.comment ? false : true}
+            disabled={!this.state.comment}
           >
             게시
           </button>

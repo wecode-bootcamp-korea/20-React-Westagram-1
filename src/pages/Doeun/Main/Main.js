@@ -1,4 +1,5 @@
 import React from 'react';
+import { throttle } from 'lodash';
 import Article from './Components/Article/Article';
 import SideBar from './Components/SideBar/SideBar';
 import Nav from './Components/Nav/Nav';
@@ -16,11 +17,12 @@ class Main extends React.Component {
       items: 2,
     };
     this.F00 = 265;
+    this.throttled = throttle(this.infiniteScroll, 1000);
   }
 
   componentDidMount() {
     this.getData();
-    window.addEventListener('scroll', this.infiniteScroll);
+    window.addEventListener('scroll', this.throttled);
   }
 
   componentWillUnmount() {
@@ -51,7 +53,7 @@ class Main extends React.Component {
     );
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop >= scrollHeight - clientHeight) {
+    if (scrollTop + 500 >= scrollHeight - clientHeight) {
       this.setState({
         preItems: this.state.items,
         items: this.state.items + 1,

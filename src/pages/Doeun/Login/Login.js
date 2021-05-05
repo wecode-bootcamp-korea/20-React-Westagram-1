@@ -36,6 +36,3 @@ class Login extends React.Component {
 }
 
 export default Login;
-
-// withRouter는 함수.
-// input으로 컴포넌트를 받고, 아웃풋으로 인자로 받은 컴포넌트에 페이지 이동 기능을 추가한 컴포넌트를 반환
