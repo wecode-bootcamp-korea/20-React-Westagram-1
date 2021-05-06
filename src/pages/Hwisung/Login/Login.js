@@ -1,6 +1,4 @@
 import React from 'react';
-// import Btn from './Components/Btn/Btn';
-// import IdPw from './Components/IdPw/IdPw';
 import { withRouter } from 'react-router-dom';
 import './Login.scss';
 
@@ -13,19 +11,37 @@ class LoginHwisung extends React.Component {
       BtnOnOff: 'LoginBtn',
     };
   }
+
   goToMain = () => {
-    this.props.history.push('/main-hwisung'); //컴포넌트가 아니라 경로
+    this.props.history.push('/main-hwisung');
+    fetch('http://10.58.0.184:8000/user/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.InputId,
+        password: this.state.InputPw,
+        nickname: '김휘성',
+        phonenumber: '010-1541-1541',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.MESSAGE === 'SUCCESS') {
+          localStorage.setItem('token', result.token);
+        } else {
+          alert('아이디나 비밀번호를 확인해주세요!!');
+        }
+      });
   };
 
   handleIdInput = event => {
     this.setState({
-      InputId: `${event.target.value}`,
+      InputId: event.target.value,
     });
   };
 
   handlePwInput = event => {
     this.setState({
-      InputPw: `${event.target.value}`,
+      InputPw: event.target.value,
     });
   };
 
@@ -37,8 +53,8 @@ class LoginHwisung extends React.Component {
 
   render() {
     return (
-      <article class="Login">
-        <header class="logo">Instagram</header>
+      <article className="Login">
+        <header className="logo">Instagram</header>
         <input
           className="id_input"
           type="text"
@@ -60,8 +76,6 @@ class LoginHwisung extends React.Component {
           value="로그인"
           onClick={this.goToMain}
         />
-        {/* a태그는 이동후 새로고침, link 페이지내에서 전환 */}
-        {/* <Link to ="/Main">메인페이지로</Link> */}
         <footer class="forgot">비밀번호를 잊으셨나요?</footer>
       </article>
     );
@@ -69,5 +83,3 @@ class LoginHwisung extends React.Component {
 }
 
 export default withRouter(LoginHwisung);
-// withRouter는 함수 ,인풋으로 컴포넌트를 받고 ,
-// 아웃풋으로 인자를 받은 컴포넌트에 페이지 이동기능을 추가한 컴포넌트를 반환한다

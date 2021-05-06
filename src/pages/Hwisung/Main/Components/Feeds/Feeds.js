@@ -6,76 +6,50 @@ class Feeds extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentList: [{}],
-      commentValue: '',
+      NewReply: '',
+      ReplyList: [{ comment: '' }],
     };
   }
-  componentDidMount() {
-    fetch('http://localhost:3000/data/Hwisung/commentData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(res => {
-        this.setState({ commentList: res });
-      });
-  }
-  addComment = e => {
-    // e.preventDefault();
-    const { commentList, commentValue } = this.state;
-    this.setState({
-      commentList: commentList.concat({
-        id: commentList.length + 1,
-        userName: 'wecode',
-        content: commentValue,
-      }),
-    });
+  addReply = e => {
+    const { ReplyList, NewReply } = this.state;
+    this.setState({ ReplyList: ReplyList.concat({ comment: NewReply }) });
+    this.setState({ NewReply: '' });
   };
-
-  // addReply = () => {
-  //   let ReplyArr = this.state.ReplyList;
-  //   if (this.state.NewReply === '') {
-  //     alert('댓글을 입력해주세요');
-  //   } else {
-  //     ReplyArr = ReplyArr.concat({ Content: this.state.NewReply });
-  //     this.setState({ NewReply: '', commentData: ReplyArr });
-  //   }
-  // };
 
   addReplyEnter = event => {
     if (event.key === 'Enter') {
-      this.addComment();
+      this.addReply();
       event.target.value = '';
     }
   };
 
-  handleCommentValue = e => {
+  writeReply = e => {
     this.setState({
-      commentValue: e.target.value,
+      NewReply: e.target.value,
     });
   };
 
   render() {
-    const { commentList, commentValue } = this.state;
-
+    const { ReplyList } = this.state;
     return (
       <>
-        <div class="Feeds">
-          <article class="Feed">
-            <div class="FeedAccount">
+        <div className="Feeds">
+          <article className="Feed">
+            <div className="FeedAccount">
               <div id="FeedAccount">
                 <img src="/images/Hwisung/netflix.png" alt="넷플릭스" />
               </div>
             </div>
-            {/* <div class="feed_img"> */}
+            {/* <div className="feed_img"> */}
             <img
               src="/images/Hwisung/feedimg.png"
-              class="feed_img"
+              className="feed_img"
               alt="피드내용"
             />
             {/* </div> */}
-            <div class="Status">
+            <div className="Status">
               <img
-                class="status_like"
+                className="status_like"
                 src="/images/Hwisung/like.png"
                 alt="좋아요 상태"
               />
@@ -83,28 +57,26 @@ class Feeds extends React.Component {
               <img src="/images/Hwisung/dm.png" alt="메세지" />
               <img src="/images/Hwisung/share.png" alt="공유하기" />
             </div>
-            <div class="WhoLike">위코드님 외 10명이조아함</div>
-            <div class="ReplyList">
-              <ul class="ReplyListAll">
-                {commentList.map(comment => {
-                  return <Reply />;
-                })}
+            <div className="WhoLike">위코드님 외 10명이조아함</div>
+            <div className="ReplyList">
+              <ul className="ReplyListAll">
+                <Reply ReplyList={ReplyList} />;
               </ul>
             </div>
-            <div class="ReplyWhen">5분전</div>
+            <div className="ReplyWhen">5분전</div>
             <input
               type="text"
-              class="reply"
-              onChange={this.handleCommentValue}
+              className="reply"
+              onChange={this.writeReply}
               onKeyPress={this.addReplyEnter}
               placeholder="댓글달기"
-              value={commentValue}
+              value={this.state.NewReply}
             />
-            <button class="Post" onClick={this.addComment}>
+            <button className="Post" onClick={this.addReply}>
               게시
             </button>
-            <button class="Like">조아여</button>
-            <button class="Del">삭제</button>
+            <button className="Like">조아여</button>
+            <button className="Del">삭제</button>
           </article>
         </div>
       </>

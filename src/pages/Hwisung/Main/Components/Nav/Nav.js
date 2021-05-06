@@ -5,31 +5,39 @@ class Nav extends React.Component {
   render() {
     return (
       <>
-        <nav class="Nav">
-          <div class="InstaLogo">
+        <nav className="Nav">
+          <div className="InstaLogo">
             <img
-              class="InstaLogoImg"
+              className="InstaLogoImg"
               src="/images/Hwisung/instagram.png"
               alt="인스타"
             />
-            <div class="InstaLogoFont">Instagram</div>
+            <div className="InstaLogoFont">Instagram</div>
           </div>
-          <div class="SearchBar">
+          <div className="SearchBar">
             <img
-              class="SearchBarImg"
+              className="SearchBarImg"
               src="/images/Hwisung/search.png"
               alt="검색"
             />
-            <input class="SearchBarBox" type="text" placeholder="검색" />
+            <input className="SearchBarBox" type="text" placeholder="검색" />
           </div>
-          <div class="Act">
+          <div className="Act">
             <img
-              class="Act_Explore"
+              className="Act_Explore"
               src="/images/Hwisung/explore.png"
               alt="검색"
             />
-            <img class="Act_Like" src="/images/Hwisung/like.png" alt="좋아요" />
-            <img class="Act_User" src="/images/Hwisung/user.png" alt="사용자" />
+            <img
+              className="Act_Like"
+              src="/images/Hwisung/like.png"
+              alt="좋아요"
+            />
+            <img
+              className="Act_User"
+              src="/images/Hwisung/user.png"
+              alt="사용자"
+            />
           </div>
         </nav>
       </>

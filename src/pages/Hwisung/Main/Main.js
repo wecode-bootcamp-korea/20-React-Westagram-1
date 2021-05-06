@@ -9,7 +9,7 @@ class MainHwisung extends React.Component {
     return (
       <>
         <Nav />
-        <main class="main">
+        <main className="main">
           <Feeds />
           <Aside />
         </main>
