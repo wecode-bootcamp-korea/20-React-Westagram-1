@@ -68,7 +68,7 @@ class LoginYeseul extends Component {
             inputId: '',
             inputPw: '',
           });
-          alert(`회원가입되었습니다! 🎉<br/>로그인해주세요`);
+          alert(`회원가입되었습니다!🎉 로그인해주세요`);
           this.convertMode();
         } else {
           alert(users.MESSAGE);
