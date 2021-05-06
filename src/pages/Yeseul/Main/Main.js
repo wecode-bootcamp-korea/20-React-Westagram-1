@@ -18,7 +18,7 @@ class MainYeseul extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Yeseul/feedData.json', {
+    fetch('/data/Yeseul/feedData.json', {
       method: 'GET',
     })
       .then(feeds => feeds.json())

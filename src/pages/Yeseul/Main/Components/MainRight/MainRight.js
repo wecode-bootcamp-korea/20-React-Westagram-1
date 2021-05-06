@@ -13,14 +13,14 @@ class MainRight extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Yeseul/storyData.json')
+    fetch('/data/Yeseul/storyData.json')
       .then(stories => stories.json())
       .then(stories =>
         this.setState({
           stories: stories,
         })
       );
-    fetch('http://localhost:3000/data/Yeseul/recommendationData.json')
+    fetch('/data/Yeseul/recommendationData.json')
       .then(recommendations => recommendations.json())
       .then(recommendations =>
         this.setState({

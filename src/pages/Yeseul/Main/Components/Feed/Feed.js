@@ -17,7 +17,7 @@ class Feed extends Component {
 
   componentDidMount() {
     const { feedId } = this.props;
-    fetch('http://localhost:3000/data/Yeseul/commentData.json', {
+    fetch('/data/Yeseul/commentData.json', {
       method: 'GET',
     })
       .then(comments => comments.json())
