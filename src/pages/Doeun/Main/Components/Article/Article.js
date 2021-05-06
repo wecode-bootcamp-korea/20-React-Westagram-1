@@ -26,10 +26,9 @@ class Article extends React.Component {
   }
 
   addComment = () => {
-    let userId = document.location.search.slice(
-      4,
-      document.location.search.indexOf('&')
-    );
+    let userId = document.location.search;
+
+    userId = userId.slice(4, userId.indexOf('&'));
     userId = userId ? userId : 'unknown';
     this.setState({
       commentList: this.state.commentList.concat({

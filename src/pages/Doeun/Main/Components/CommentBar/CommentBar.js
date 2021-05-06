@@ -6,7 +6,7 @@ class CommentBar extends React.Component {
   constructor() {
     super();
     this.state = { comment: '' };
-    this.debounceHandler = debounce(this.debounceHandler, 500);
+    this.debounceHandler = debounce(this.debounceHandler, 300);
   }
 
   inputHandler = event => {
@@ -15,11 +15,12 @@ class CommentBar extends React.Component {
   };
 
   debounceHandler = value => {
-    console.log(value);
     this.props.setInput(value);
   };
 
   render() {
+    const { comment } = this.state;
+    const { inputHandler } = this;
     return (
       <div className="comments">
         <div>
@@ -45,13 +46,10 @@ class CommentBar extends React.Component {
           <input
             type="text"
             placeholder="댓글 달기..."
-            onInput={this.inputHandler}
-            value={this.state.comment}
+            onInput={inputHandler}
+            value={comment}
           />
-          <button
-            className={this.state.comment ? 'active' : ''}
-            disabled={!this.state.comment}
-          >
+          <button className={comment ? 'active' : ''} disabled={!comment}>
             게시
           </button>
         </form>

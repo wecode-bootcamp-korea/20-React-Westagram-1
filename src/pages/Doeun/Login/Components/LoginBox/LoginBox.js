@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Main from '../../../Main/Main';
 import './LoginBox.scss';
 
 class LoginBox extends React.Component {
@@ -56,7 +57,28 @@ class LoginBox extends React.Component {
           <h1 onClick={this.goToMain}>westagram</h1>
         </div>
         <div className="login">
-          <form action="/main-doeun" onSubmit={this.checkValidation}>
+          <form
+            action={'/main-doeun'}
+            onSubmit={e => {
+              e.preventDefault();
+              fetch('http://10.58.0.184:8000/user/signin', {
+                method: 'POST',
+                body: JSON.stringify({
+                  email: id,
+                  password: pw,
+                }),
+              })
+                .then(res => res.json())
+                .then(res => {
+                  if (res.MESSAGE == 'SUCCESS') {
+                    localStorage.setItem('token', res.token);
+                    this.goToMain();
+                  } else {
+                    alert('아이디, 패스워드를 확인하세요.');
+                  }
+                });
+            }}
+          >
             <div>
               <label htmlFor="id" className={id ? 'typing' : ''}>
                 전화번호, 사용자 이름 또는 이메일

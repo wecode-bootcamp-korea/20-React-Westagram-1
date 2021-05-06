@@ -17,12 +17,12 @@ class Main extends React.Component {
       items: 2,
     };
     this.F00 = 265;
-    this.throttled = throttle(this.infiniteScroll, 1000);
+    this.infiniteScroll = throttle(this.infiniteScroll, 1000);
   }
 
   componentDidMount() {
     this.getData();
-    window.addEventListener('scroll', this.throttled);
+    window.addEventListener('scroll', this.infiniteScroll);
   }
 
   componentWillUnmount() {
@@ -81,7 +81,7 @@ class Main extends React.Component {
 
     return (
       <div className="mainDoeun">
-        <Nav users={this.state.users} />
+        <Nav users={users} />
         <div className="mainContainer">
           <main>
             <div className="storyBox">
