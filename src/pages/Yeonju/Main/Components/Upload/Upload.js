@@ -7,9 +7,7 @@ import './Upload.scss';
 
 import {
   faPaperPlane,
-  faCompass,
   faHeart,
-  // faEllipsisH,
   faComment,
   faBookmark,
   faSmile,
@@ -21,12 +19,11 @@ class Upload extends React.Component {
     this.state = {
       commentValue: '',
       commentList: [],
-      value: '',
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Yeonju/commentData.json', {
+    fetch('/data/Yeonju/commentData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -40,7 +37,6 @@ class Upload extends React.Component {
   handleCommentInput = e => {
     this.setState({
       commentValue: e.target.value,
-      value: e.target.value,
     });
   };
 
@@ -48,9 +44,9 @@ class Upload extends React.Component {
     e.preventDefault();
     const { commentList, commentValue } = this.state;
     this.setState({
-      commentList: commentList.concat([commentValue]),
+      // commentList: commentList.concat([commentValue]),
+      commentList: [...commentList, commentValue],
       commentValue: '',
-      value: '',
     });
   };
 
@@ -62,7 +58,7 @@ class Upload extends React.Component {
             <div className="feeds_upload_idname">
               <img
                 src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/35986726_903848573151322_399536158729568256_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=oGlfWXPE-bcAX9atN7M&edm=ABfd0MgAAAAA&ccb=7-4&oh=f611f5be4a0ab8559d5e52a25ec6441e&oe=60A9E126&_nc_sid=7bff83"
-                alt="yyeon_jju profile image"
+                alt="yyeon_jju_profile_image"
               />
               <div>
                 <span className="feeds_uploader">yyeon_jju</span>
@@ -112,9 +108,10 @@ class Upload extends React.Component {
                 <span className="comment_writer">yyeon_jju</span>
                 <span className="comment_content">너무 예뻐요~~</span>
               </li>
-              {this.state.commentList.map(commentElement => {
+              {this.state.commentList.map((commentElement, index) => {
                 return (
                   <Comment
+                    key={index}
                     userName={commentElement.userName}
                     comment={commentElement.content}
                   />
@@ -125,13 +122,12 @@ class Upload extends React.Component {
               <span className="time_pass"> 2시간 전</span>
             </div>
             <form className="feeds_upload_wright" onSubmit={this.addComment}>
-              {/* <i className="far fa-smile icon"></i> */}
               <FontAwesomeIcon icon={faSmile} className="far fa-smile icon" />
               <input
                 placeholder="댓글 달기..."
                 onChange={this.handleCommentInput}
-                value={this.state.value}
-              ></input>
+                value={this.state.commentValue}
+              />
               <button type="submit">게시</button>
             </form>
           </div>

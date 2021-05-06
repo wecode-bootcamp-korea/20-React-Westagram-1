@@ -5,10 +5,6 @@ import {
   faPaperPlane,
   faCompass,
   faHeart,
-  faEllipsisH,
-  faComment,
-  faBookmark,
-  faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 
 import './Nav.scss';

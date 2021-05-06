@@ -9,22 +9,48 @@ class LoginYeonju extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
-      isActive: false,
+      isLoginBtnActive: false,
     };
   }
-  goToMain = () => {
-    this.props.history.push('/main-yeonju');
+
+  // goToMain = e => {
+  //   this.props.history.push('/main-yeonju');
+  // };
+
+  goToMain = e => {
+    e.preventDefault();
+    fetch('http://10.58.6.40:8000/user/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+        account: '',
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.message === 'SUCCESS') {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this.props.history.push('/main-yeonju');
+        } else {
+          alert('wrong!!!');
+        }
+      });
   };
 
-  handleIdInput = e => {
+  handleInput = e => {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
   changeButton = () => {
     const { idValue, pwValue } = this.state;
-    this.setState({ isActive: idValue.includes('@') && pwValue.length >= 5 });
+    this.setState({
+      isLoginBtnActive: idValue.includes('@') && pwValue.length >= 5,
+    });
   };
 
   render() {
@@ -32,28 +58,29 @@ class LoginYeonju extends React.Component {
       <div className="LoginYeonju">
         <div className="outbox">
           <header className="westagram"> Westagram </header>
-
           <form className="id_pw">
             <input
               className="idInput"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
               onKeyUp={this.changeButton}
               name="idValue"
-            />
+            ></input>
             <input
               className="pwInput"
               type="password"
               placeholder="비밀번호"
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
               onKeyUp={this.changeButton}
               name="pwValue"
-            />
+            ></input>
             <button
               type="button"
               onClick={this.goToMain}
-              className={'btn' + (this.state.isActive ? 'Active' : 'Disabled')}
+              className={
+                'btn' + (this.state.isLoginBtnActive ? 'Active' : 'Disabled')
+              }
             >
               로그인
             </button>
