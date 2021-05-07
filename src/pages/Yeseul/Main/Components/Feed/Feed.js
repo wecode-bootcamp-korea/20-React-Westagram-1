@@ -17,9 +17,7 @@ class Feed extends Component {
 
   componentDidMount() {
     const { feedId } = this.props;
-    fetch('/data/Yeseul/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/Yeseul/commentData.json')
       .then(comments => comments.json())
       .then(comments => {
         this.setState({
@@ -55,7 +53,6 @@ class Feed extends Component {
   deleteComment = clickedId => {
     const { comments } = this.state;
     this.setState({
-      ...this.state,
       comments: comments.filter(comment => comment.id !== clickedId),
     });
   };

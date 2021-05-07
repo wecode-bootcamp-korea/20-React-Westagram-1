@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { API } from '../../config.js';
 import './Login.scss';
 
 class LoginYeseul extends Component {
@@ -26,7 +27,7 @@ class LoginYeseul extends Component {
   signIn = e => {
     const { inputId, inputPw } = this.state;
     e.preventDefault();
-    fetch('http://10.58.6.252:8000/users/signin', {
+    fetch(API.SIGN_IN, {
       method: 'POST',
       body: JSON.stringify({
         email: inputId,
@@ -54,7 +55,7 @@ class LoginYeseul extends Component {
   signUp = e => {
     const { inputId, inputPw } = this.state;
     e.preventDefault();
-    fetch('http://10.58.6.252:8000/users/signup', {
+    fetch(API.SIGN_UP, {
       method: 'POST',
       body: JSON.stringify({
         email: inputId,

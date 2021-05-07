@@ -28,21 +28,22 @@ class MainYeseul extends Component {
   }
   render() {
     const { user, feeds } = this.state;
-    const feed = feeds.map(feed => (
-      <Feed
-        key={feed.id}
-        feedId={feed.id}
-        userName={user.name}
-        writer={feed.writer}
-        contents={feed.contents}
-      />
-    ));
 
     return (
       <div className="mainYeseul">
         <Nav />
         <main>
-          <section className="feeds">{feed}</section>
+          <section className="feeds">
+            {feeds.map(feed => (
+              <Feed
+                key={feed.id}
+                feedId={feed.id}
+                userName={user.name}
+                writer={feed.writer}
+                contents={feed.contents}
+              />
+            ))}
+          </section>
           <MainRight user={user} />
         </main>
       </div>

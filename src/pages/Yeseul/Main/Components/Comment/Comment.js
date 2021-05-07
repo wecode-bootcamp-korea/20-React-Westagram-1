@@ -10,18 +10,13 @@ class Comment extends Component {
     };
   }
 
-  handleClick = e => {
-    const { handleClick } = this.props;
-    handleClick(e.target.id);
-  };
-
   likeComment = () => {
     this.setState({ isLiked: !this.state.isLiked });
   };
 
   render() {
     const { isLiked } = this.state;
-    const { info } = this.props;
+    const { info, handleClick } = this.props;
 
     return (
       <p className="feed__comment align-item-center">
@@ -30,9 +25,8 @@ class Comment extends Component {
         {info.content}
         <button
           type="button"
-          id={info.id}
           className="delete-btn"
-          onClick={this.handleClick}
+          onClick={() => handleClick(info.id)}
         >
           x
         </button>
