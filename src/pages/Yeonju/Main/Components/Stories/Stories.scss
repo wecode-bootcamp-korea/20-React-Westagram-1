@@ -11,12 +11,14 @@
   height: 100px;
   width: inherit;
   background-color: white;
+
   .feeds_story_list {
     position: absolute;
     height: inherit;
     display: flex;
     align-items: center;
     margin-left: 10px;
+
     img {
       position: relative;
       left: 2.5px;
@@ -26,6 +28,7 @@
       width: 70px;
       border-radius: 50%;
     }
+
     div.story_gradient_wrap {
       height: 75px;
       width: 75px;

@@ -6,13 +6,12 @@ import {
   faCompass,
   faHeart,
 } from '@fortawesome/free-regular-svg-icons';
-
 import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
     return (
-      <div className="Nav">
+      <div className="nav">
         <nav className="page_top_nav">
           <div>
             <h1 className="page_name">westagram</h1>

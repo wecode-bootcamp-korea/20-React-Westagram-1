@@ -1,41 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import './Aside.scss';
 
 class Aside extends React.Component {
-  constructor() {
-    super();
-    this.ASIDE_RECOMMEND_LIST = [
-      {
-        alt: '태연',
-        img: 'taeyeon.jpg',
-        instagramId: 'taeyeon_ss',
-        follow: '팔로우',
-      },
-      {
-        alt: '아이유',
-        img: 'IU.png',
-        instagramId: 'dlwlrma',
-        follow: '팔로우',
-      },
-      {
-        alt: '이해리',
-        img: 'haery.png',
-        instagramId: 'dlgofl85',
-        follow: '팔로우',
-      },
-      {
-        alt: '강민경',
-        img: 'minkyung.png',
-        instagramId: 'iammingki',
-        follow: '팔로우',
-      },
-    ];
-  }
   render() {
     return (
-      <div className="Aside">
+      <div className="aside">
         <aside className="main_right">
           <header className="right_side_top">
             <img
@@ -56,7 +26,7 @@ class Aside extends React.Component {
           </article>
           <section>
             <ul>
-              {this.ASIDE_RECOMMEND_LIST.map((el, index) => {
+              {ASIDE_RECOMMEND_LIST.map((el, index) => {
                 return (
                   <li className="right_side_recommend" key={index}>
                     <img
@@ -79,3 +49,30 @@ class Aside extends React.Component {
 }
 
 export default Aside;
+
+const ASIDE_RECOMMEND_LIST = [
+  {
+    alt: '태연',
+    img: 'taeyeon.jpg',
+    instagramId: 'taeyeon_ss',
+    follow: '팔로우',
+  },
+  {
+    alt: '아이유',
+    img: 'IU.png',
+    instagramId: 'dlwlrma',
+    follow: '팔로우',
+  },
+  {
+    alt: '이해리',
+    img: 'haery.png',
+    instagramId: 'dlgofl85',
+    follow: '팔로우',
+  },
+  {
+    alt: '강민경',
+    img: 'minkyung.png',
+    instagramId: 'iammingki',
+    follow: '팔로우',
+  },
+];

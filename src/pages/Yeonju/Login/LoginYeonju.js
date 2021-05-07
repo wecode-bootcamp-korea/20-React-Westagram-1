@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+// import { LOGIN_API } from '../../config.js';
 import './LoginYeonju.scss';
 
 class LoginYeonju extends React.Component {
@@ -9,7 +9,6 @@ class LoginYeonju extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
-      isLoginBtnActive: false,
     };
   }
 
@@ -30,7 +29,6 @@ class LoginYeonju extends React.Component {
       .then(res => res.json())
       .then(res => {
         if (res.message === 'SUCCESS') {
-          console.log(res);
           localStorage.setItem('token', res.token);
           this.props.history.push('/main-yeonju');
         } else {
@@ -46,16 +44,11 @@ class LoginYeonju extends React.Component {
     });
   };
 
-  changeButton = () => {
-    const { idValue, pwValue } = this.state;
-    this.setState({
-      isLoginBtnActive: idValue.includes('@') && pwValue.length >= 5,
-    });
-  };
-
   render() {
+    const { idValue, pwValue } = this.state;
+
     return (
-      <div className="LoginYeonju">
+      <div className="loginYeonju">
         <div className="outbox">
           <header className="westagram"> Westagram </header>
           <form className="id_pw">
@@ -66,7 +59,7 @@ class LoginYeonju extends React.Component {
               onChange={this.handleInput}
               onKeyUp={this.changeButton}
               name="idValue"
-            ></input>
+            />
             <input
               className="pwInput"
               type="password"
@@ -74,13 +67,15 @@ class LoginYeonju extends React.Component {
               onChange={this.handleInput}
               onKeyUp={this.changeButton}
               name="pwValue"
-            ></input>
+            />
             <button
               type="button"
               onClick={this.goToMain}
-              className={
-                'btn' + (this.state.isLoginBtnActive ? 'Active' : 'Disabled')
-              }
+              className={`btn${
+                idValue.includes('@') && pwValue.length >= 5
+                  ? 'Active'
+                  : 'Disabled'
+              }`}
             >
               로그인
             </button>

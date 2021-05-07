@@ -23,9 +23,7 @@ class Upload extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/Yeonju/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/Yeonju/commentData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
