@@ -43,16 +43,16 @@ body {
     background-color: $btnOnColor;
   }
 
-  .id_input {
+  .IdInput {
     @include inputDesign();
   }
   
-  .pw_input {
+  .PwInput {
     @include inputDesign();
     margin-top: -30px;
   }
 
-  .logo {
+  .Logo {
     text-align: center;
     margin-top: 20px;
     font-family: 'Lobster', cursive;
@@ -60,7 +60,7 @@ body {
   }
 }
 
-.forgot {
+.Forgot {
   text-align: center;
   font-family: sans-serif;
   font-size: 13px;

@@ -6,32 +6,32 @@ class Aside extends React.Component {
     return (
       <>
         <div className="Aside">
-          <div className="Profile">
+          <div className="profile">
             <div>
               <img
-                className="ProfileImg"
+                className="profileImg"
                 src="/images/Hwisung/wecode.png"
                 alt="프로필"
               />
             </div>
-            <div className="ProfileInfo">
-              <div className="ProfileId">wecode_bootcamp</div>
-              <div className="ProfileName">Wecode | 위코드</div>
+            <div className="profileInfo">
+              <div className="profileId">wecode_bootcamp</div>
+              <div className="profileName">Wecode | 위코드</div>
             </div>
           </div>
-          <div className="story_list">
+          <div className="storyList">
             <div className="StoryAll">
               <span className="story">스토리</span>
-              <span className="seeAll_1">모두보기</span>
+              <span className="seeAll1">모두보기</span>
             </div>
             <div>
               <img
                 src="/images/Hwisung/travelreason.png"
-                className="story_list_img"
+                className="storyListImg"
                 alt="프로필"
               />
             </div>
-            <div className="story_list_info">
+            <div className="storyListInfo">
               <div className="story_list_id">travelreason</div>
               <div className="story_list_time">5분전</div>
             </div>
@@ -39,7 +39,7 @@ class Aside extends React.Component {
               <img
                 src="/images/Hwisung/seoultravel.png"
                 alt=""
-                className="story_list_img"
+                className="storyListImg"
               />
               <div>seoultravel</div>
               <div>2시간전</div>
@@ -47,7 +47,7 @@ class Aside extends React.Component {
             <div className="story_list3">
               <img
                 src="/images/Hwisung/greedeat.png"
-                className="story_list_img"
+                className="storyListImg"
                 alt="프로필"
               />
               <a>greedeat</a>
@@ -56,11 +56,11 @@ class Aside extends React.Component {
           </div>
           <div className="recommend">
             <span className="for_recommend">회원님을 위한 추천</span>
-            <span className="seeAll_2">모두보기</span>
+            <span className="seeAll2">모두보기</span>
             <div className="recommend_list1">
               <img
                 src="/images/Hwisung/musinsa.png"
-                className="recommend_list_img"
+                className="recommendListImg"
                 alt="프로필"
               />
               <a>musinsa</a>
@@ -69,7 +69,7 @@ class Aside extends React.Component {
             <div className="recommend_list2">
               <img
                 src="/images/Hwisung/dingo_travel.png"
-                className="recommend_list_img"
+                className="recommendListImg"
                 alt="프로필"
               />
               <a>dingo_travel</a>
@@ -78,7 +78,7 @@ class Aside extends React.Component {
             <div className="recommend_list3">
               <img
                 src="/images/Hwisung/todayhouse.png"
-                className="recommend_list_img"
+                className="recommendListImg"
                 alt="오늘의집"
               />
               <a>todayhouse</a>

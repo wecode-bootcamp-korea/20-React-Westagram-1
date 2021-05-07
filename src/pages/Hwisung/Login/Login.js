@@ -6,27 +6,30 @@ class LoginHwisung extends React.Component {
   constructor() {
     super();
     this.state = {
-      InputId: '',
-      InputPw: '',
-      BtnOnOff: 'LoginBtn',
+      inputId: '',
+      inputPw: '',
+      btnOnOff: 'LoginBtn',
     };
   }
 
   goToMain = () => {
-    this.props.history.push('/main-hwisung');
-    fetch('http://10.58.0.184:8000/user/signin', {
+    console.log('clicked');
+    fetch('http://10.58.3.66:8000/user/login', {
       method: 'POST',
       body: JSON.stringify({
-        email: this.state.InputId,
-        password: this.state.InputPw,
-        nickname: '김휘성',
-        phonenumber: '010-1541-1541',
+        email: this.state.inputId,
+        password: this.state.inputPw,
+        name: '김휘성',
+        nickname: 'we휘성',
+        phone_number: '01015411541',
+        age: 25,
       }),
     })
       .then(response => response.json())
       .then(result => {
         if (result.MESSAGE === 'SUCCESS') {
           localStorage.setItem('token', result.token);
+          this.props.history.push('/main-hwisung');
         } else {
           alert('아이디나 비밀번호를 확인해주세요!!');
         }
@@ -35,43 +38,43 @@ class LoginHwisung extends React.Component {
 
   handleIdInput = event => {
     this.setState({
-      InputId: event.target.value,
+      inputId: event.target.value,
     });
   };
 
   handlePwInput = event => {
     this.setState({
-      InputPw: event.target.value,
+      inputPw: event.target.value,
     });
   };
 
   InvalidCheck = () => {
-    this.state.InputId.includes('@') && this.state.InputPw.length > 4
-      ? this.setState({ BtnOnOff: 'LoginBtnOn' })
-      : this.setState({ BtnOnOff: 'LoginBtn' });
+    this.state.inputId.includes('@') && this.state.inputPw.length > 4
+      ? this.setState({ btnOnOff: 'LoginBtnOn' })
+      : this.setState({ btnOnOff: 'LoginBtn' });
   };
 
   render() {
     return (
       <article className="Login">
-        <header className="logo">Instagram</header>
+        <header className="Logo">Instagram</header>
         <input
-          className="id_input"
+          className="IdInput"
           type="text"
           placeholder="전화번호, 사용자이름 또는 이메일"
           onChange={this.handleIdInput}
           onKeyUp={this.InvalidCheck}
         />
         <input
-          className="pw_input"
+          className="PwInput"
           type="password"
           placeholder="비밀번호"
           onChange={this.handlePwInput}
           onKeyUp={this.InvalidCheck}
         />
         <input
-          className={this.state.BtnOnOff}
-          id="LoginBtn"
+          className={this.state.btnOnOff}
+          id="loginBtn"
           type="button"
           value="로그인"
           onClick={this.goToMain}

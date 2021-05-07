@@ -4,7 +4,7 @@ class Reply extends React.Component {
   render() {
     return (
       <>
-        {this.props.ReplyList.map(e => (
+        {this.props.replyList.map(e => (
           <li>{e.comment}</li>
         ))}
       </>

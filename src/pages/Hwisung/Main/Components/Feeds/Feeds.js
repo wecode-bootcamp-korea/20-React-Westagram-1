@@ -6,31 +6,30 @@ class Feeds extends React.Component {
   constructor() {
     super();
     this.state = {
-      NewReply: '',
-      ReplyList: [{ comment: '' }],
+      newReply: '',
+      replyList: [{ comment: '' }],
     };
   }
   addReply = e => {
-    const { ReplyList, NewReply } = this.state;
-    this.setState({ ReplyList: ReplyList.concat({ comment: NewReply }) });
-    this.setState({ NewReply: '' });
+    const { replyList, newReply } = this.state;
+    this.setState({ replyList: replyList.concat({ comment: newReply }) });
+    this.setState({ newReply: '' });
   };
 
   addReplyEnter = event => {
     if (event.key === 'Enter') {
       this.addReply();
-      event.target.value = '';
     }
   };
 
   writeReply = e => {
     this.setState({
-      NewReply: e.target.value,
+      newReply: e.target.value,
     });
   };
 
   render() {
-    const { ReplyList } = this.state;
+    const { replyList } = this.state;
     return (
       <>
         <div className="Feeds">
@@ -60,7 +59,7 @@ class Feeds extends React.Component {
             <div className="WhoLike">위코드님 외 10명이조아함</div>
             <div className="ReplyList">
               <ul className="ReplyListAll">
-                <Reply ReplyList={ReplyList} />;
+                <Reply replyList={replyList} />;
               </ul>
             </div>
             <div className="ReplyWhen">5분전</div>
@@ -70,7 +69,7 @@ class Feeds extends React.Component {
               onChange={this.writeReply}
               onKeyPress={this.addReplyEnter}
               placeholder="댓글달기"
-              value={this.state.NewReply}
+              value={this.state.newReply}
             />
             <button className="Post" onClick={this.addReply}>
               게시
