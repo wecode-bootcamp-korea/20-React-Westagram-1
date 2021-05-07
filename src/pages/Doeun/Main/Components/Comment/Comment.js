@@ -9,10 +9,10 @@ class Comment extends React.Component {
 
   render() {
     const { like } = this.state;
-    const { id, comment, index, setComment, commentList } = this.props;
+    const { id, comment, index, deleteComment, commentList } = this.props;
 
     return (
-      <div className="blahblah">
+      <div className="Comment">
         <p className="id">{id} </p>
         <p>{comment}</p>
         <img
@@ -24,7 +24,7 @@ class Comment extends React.Component {
             if (window.confirm('삭제하시겠습니까?')) {
               let newList = [...commentList];
               newList.splice(index, 1);
-              setComment(newList);
+              deleteComment(newList);
             }
           }}
         />

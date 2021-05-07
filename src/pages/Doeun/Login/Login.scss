@@ -3,22 +3,15 @@
   src: url('http://localhost:3000/images/Doeun/blue_vinyl_regular_ps_ot.otf');
 }
 
-body {
-  background-color: #fafafa;
-}
-
-* {
-  margin: auto;
-  box-sizing: border-box;
-  outline: none;
-}
-
 .loginDoeun {
+  margin-top: 100px;
   font-size: 14px;
   text-align: center;
+  background-color: #fafafa;
 
   .flexcontainer {
     display: flex;
+    margin: auto;
     max-width: 935px;
     padding: 30px 75px;
   }
@@ -67,20 +60,26 @@ body {
     padding: 20px;
     background-color: white;
     border: 1px solid #dbdbdb;
+
+    * {
+      margin: auto;
+    }
+
+    span {
+      color: #4295f6;
+      font-weight: bolder;
+    }
   }
 
-  .signupBox span {
-    color: #4295f6;
-    font-weight: bolder;
-  }
+  .download {
+    p {
+      margin: 20px;
+    }
 
-  .download p {
-    margin: 20px;
-  }
-
-  .download img {
-    height: 40px;
-    margin: 0 2px;
+    img {
+      height: 40px;
+      margin: 0 2px;
+    }
   }
 
   @media (min-width: 875px) {

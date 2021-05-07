@@ -7,15 +7,19 @@
   border: 1px solid #dbdbdb;
   border-radius: 2px;
 
+  * {
+    margin: auto;
+  }
+
   .logo {
     width: 175px;
     height: 50px;
     margin: 22px auto 12px;
     font-size: 22px;
-  }
 
-  .logo h1 {
-    font-family: instaStyleFont;
+    h1 {
+      font-family: instaStyleFont;
+    }
   }
 
   .login {
@@ -23,45 +27,41 @@
     height: 213px;
     margin-top: 50px;
     padding: 0 40px;
-  }
 
-  .login input {
-    width: 100%;
-    height: 38px;
-    margin-bottom: 5px;
-    padding: 10px;
-    background-color: #fafafa;
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
-    outline: none;
-  }
+    input {
+      width: 100%;
+      height: 38px;
+      margin-bottom: 5px;
+      padding: 10px;
+      background-color: #fafafa;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      outline: none;
+      &.typing {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      &:focus {
+        border-color: #a8a8a8;
+      }
+    }
+    div {
+      position: relative;
+    }
+    label {
+      position: absolute;
+      top: 9px;
+      left: 11px;
+      color: #8e8e8e;
+      font-size: 12px;
+      transition: 0.3s;
 
-  .login input.typing {
-    padding-top: 20px;
-    font-size: 12px;
-  }
-
-  .login input:focus {
-    border-color: #a8a8a8;
-  }
-
-  .login div {
-    position: relative;
-  }
-
-  .login label {
-    position: absolute;
-    top: 9px;
-    left: 11px;
-    color: #8e8e8e;
-    font-size: 12px;
-    transition: 0.3s;
-  }
-
-  .login label.typing {
-    position: absolute;
-    top: 2px;
-    font-size: 6px;
+      &.typing {
+        position: absolute;
+        top: 2px;
+        font-size: 6px;
+      }
+    }
   }
 
   .showPw {

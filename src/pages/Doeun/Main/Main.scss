@@ -3,21 +3,22 @@
   src: url('http://localhost:3000/images/Doeun/blue_vinyl_regular_ps_ot.otf');
 }
 
-body {
-  background-color: #fafafa;
-}
-
-* {
-  margin: auto;
-  box-sizing: border-box;
-  outline: none;
-}
-
 .mainDoeun {
+  background-color: #fafafa;
+
+  * {
+    outline: none;
+  }
+
   .mainContainer {
+    margin: auto;
     display: flex;
     width: 960px;
     margin-top: 84px;
+
+    main {
+      margin: auto;
+    }
   }
 
   .storyBox {
@@ -31,20 +32,20 @@ body {
     background-color: white;
     font-size: 14px;
     overflow-x: scroll;
-  }
 
-  .storyBox::-webkit-scrollbar {
-    display: none;
-  }
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
-  .storyBox i {
-    position: absolute;
-    top: 50px;
-    color: white;
-    font-size: 22px;
-    text-shadow: 0 0 5px #8e8e8e;
-    cursor: pointer;
-    z-index: 99;
+    i {
+      position: absolute;
+      top: 50px;
+      color: white;
+      font-size: 22px;
+      text-shadow: 0 0 5px #8e8e8e;
+      cursor: pointer;
+      z-index: 99;
+    }
   }
 
   .fa-chevron-circle-left {

@@ -4,28 +4,17 @@ import './Footer.scss';
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
+      <footer className="Footer">
         <ul>
           <div>
-            <li>소개</li>
-            <li>블로그</li>
-            <li>채용 정보</li>
-            <li>도움말</li>
-            <li>API</li>
-            <li>개인정보처리방침</li>
-            <li>약관</li>
-            <li>인기 계정</li>
-            <li>해시태그</li>
-            <li>위치</li>
+            {FOOTER_DATA1.slice(0, 10).map(e => (
+              <li>{e}</li>
+            ))}
           </div>
           <div>
-            <li>뷰티</li>
-            <li>댄스 및 공연</li>
-            <li>피트니스</li>
-            <li>식음료</li>
-            <li>집 및 정원</li>
-            <li>음악</li>
-            <li>시각 예술</li>
+            {FOOTER_DATA1.slice(11).map(e => (
+              <li>{e}</li>
+            ))}
           </div>
         </ul>
         <form>
@@ -41,3 +30,23 @@ class Footer extends React.Component {
 }
 
 export default Footer;
+
+const FOOTER_DATA1 = [
+  '소개',
+  '블로그',
+  '채용 정보',
+  '도움말',
+  'API',
+  '개인정보처리방침',
+  '약관',
+  '인기 계정',
+  '해시태그',
+  '위치',
+  '뷰티',
+  '댄스 및 공연',
+  '피트니스',
+  '식음료',
+  '집 및 정원',
+  '음악',
+  '시각 예술',
+];

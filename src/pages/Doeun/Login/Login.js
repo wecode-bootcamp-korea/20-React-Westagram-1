@@ -10,7 +10,7 @@ class Login extends React.Component {
         <div className="flexcontainer">
           <div className="iphone">
             <img alt="mobile instagram" src="images/Doeun/iphone.png" />
-            <div className="screen"></div>
+            <div className="screen" />
           </div>
           <div className="defaultBox">
             <LoginBox />

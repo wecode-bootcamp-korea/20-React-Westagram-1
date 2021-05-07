@@ -15,7 +15,7 @@ class CommentBar extends React.Component {
   };
 
   debounceHandler = value => {
-    this.props.setInput(value);
+    this.props.setCommentValue(value);
   };
 
   render() {

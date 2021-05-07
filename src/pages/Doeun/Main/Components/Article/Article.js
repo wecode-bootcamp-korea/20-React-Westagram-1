@@ -14,9 +14,7 @@ class Article extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/Doeun/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/Doeun/commentData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -26,23 +24,19 @@ class Article extends React.Component {
   }
 
   addComment = () => {
-    let userId = document.location.search;
-
-    userId = userId.slice(4, userId.indexOf('&'));
-    userId = userId ? userId : 'unknown';
     this.setState({
       commentList: this.state.commentList.concat({
-        id: userId,
+        id: 'unknown',
         comment: this.state.commentValue,
       }),
     });
   };
 
-  setInput = comment => {
+  setCommentValue = comment => {
     this.setState({ commentValue: comment });
   };
 
-  setComment = comment => {
+  deleteComment = comment => {
     this.setState({ commentList: comment });
   };
 
@@ -65,25 +59,26 @@ class Article extends React.Component {
         <img alt="article image" src={feedImg} />
         <UnderBar likes={likes} />
         <div className="contents">
-          <div className="blahblah">
+          <div className="Comment">
             <p className="id">{id} </p>
             <p>{saySomething}</p>
           </div>
           <p className="gray ago">{hour}시간 전</p>
-          {commentList.map(c => (
+          {commentList.map((c, index) => (
             <Comment
               key={c.id + c.comment}
+              index={index}
               id={c.id}
               comment={c.comment}
               isliked={c.isliked}
               commentList={commentList}
-              setComment={this.setComment}
+              deleteComment={this.deleteComment}
             />
           ))}
         </div>
         <CommentBar
           commentValue={commentValue}
-          setInput={this.setInput}
+          setCommentValue={this.setCommentValue}
           addComment={this.addComment}
         />
       </article>

@@ -16,7 +16,6 @@ class Main extends React.Component {
       preItems: 0,
       items: 2,
     };
-    this.F00 = 265;
     this.infiniteScroll = throttle(this.infiniteScroll, 1000);
   }
 
@@ -30,12 +29,10 @@ class Main extends React.Component {
   }
 
   getData = () => {
-    fetch('http://localhost:3000/data/Doeun/articleData.json', {
-      method: 'GET',
-    })
+    fetch('/data/Doeun/articleData.json')
       .then(res => res.json())
       .then(res => {
-        let dataToAdd = res.slice(this.state.preItems, this.state.items);
+        const dataToAdd = res.slice(this.state.preItems, this.state.items);
         this.setState({
           articleData: [...this.state.articleData, ...dataToAdd],
         });
@@ -68,12 +65,12 @@ class Main extends React.Component {
 
   goRight = () => {
     if (this.state.storyRight < 765)
-      this.setState({ storyRight: this.state.storyRight + this.F00 });
+      this.setState({ storyRight: this.state.storyRight + F00 });
   };
 
   goLeft = () => {
     if (this.state.storyRight > 0)
-      this.setState({ storyRight: this.state.storyRight - this.F00 });
+      this.setState({ storyRight: this.state.storyRight - F00 });
   };
 
   render() {
@@ -132,3 +129,5 @@ class Main extends React.Component {
 }
 
 export default Main;
+
+const F00 = 265;
