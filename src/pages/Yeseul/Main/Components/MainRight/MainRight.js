@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import User from '../User/User';
 import SectionRight from '../SectionRight/SectionRight';
+import { API } from '../../../../../config';
 import './MainRight.scss';
 
 class MainRight extends Component {
@@ -13,14 +14,14 @@ class MainRight extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/Yeseul/storyData.json')
+    fetch(API.STORY)
       .then(stories => stories.json())
       .then(stories =>
         this.setState({
           stories: stories,
         })
       );
-    fetch('/data/Yeseul/recommendationData.json')
+    fetch(API.RECOMMEND)
       .then(recommendations => recommendations.json())
       .then(recommendations =>
         this.setState({

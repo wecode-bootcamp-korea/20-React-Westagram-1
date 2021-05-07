@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from './Components/Nav/Nav';
 import Feed from './Components/Feed/Feed';
 import MainRight from './Components/MainRight/MainRight';
+import { API } from '../../../config';
 import './Main.scss';
 
 class MainYeseul extends Component {
@@ -18,9 +19,7 @@ class MainYeseul extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/Yeseul/feedData.json', {
-      method: 'GET',
-    })
+    fetch(API.FEED)
       .then(feeds => feeds.json())
       .then(feeds => {
         this.setState({ feeds: feeds });

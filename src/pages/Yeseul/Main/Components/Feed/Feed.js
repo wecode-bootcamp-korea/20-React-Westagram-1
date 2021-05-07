@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import User from '../User/User';
 import Comment from '../Comment/Comment';
 import IconButton from '../Button/IconButton';
+import { API } from '../../../../../config';
 import './Feed.scss';
 
 class Feed extends Component {
@@ -17,7 +18,7 @@ class Feed extends Component {
 
   componentDidMount() {
     const { feedId } = this.props;
-    fetch('/data/Yeseul/commentData.json')
+    fetch(API.COMMENT)
       .then(comments => comments.json())
       .then(comments => {
         this.setState({
