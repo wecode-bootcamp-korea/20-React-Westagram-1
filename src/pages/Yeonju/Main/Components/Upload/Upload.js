@@ -1,10 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import Comment from '../Comment/Comment';
-
-import './Upload.scss';
-
 import {
   faPaperPlane,
   faHeart,
@@ -12,6 +7,8 @@ import {
   faBookmark,
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
+import Comment from '../Comment/Comment';
+import './Upload.scss';
 
 class Upload extends React.Component {
   constructor() {
