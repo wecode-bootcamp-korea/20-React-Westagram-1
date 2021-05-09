@@ -31,13 +31,13 @@
       }
 
       .icon {
-        position: relative;
-        left: 45%;
+        position: absolute;
+        top: 45px;
       }
 
-      input::placeholder {
-        transform: translateX(50%);
-      }
+      // input::placeholder {
+      //   transform: translateX(50%);
+      // }
     }
   }
 

@@ -19,15 +19,16 @@ class Upload extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch('/data/Yeonju/commentData.json')
-      .then(res => res.json())
-      .then(commentData => {
-        this.setState({
-          commentList: commentData,
-        });
-      });
-  }
+  //목데이터 활용 댓글
+  // componentDidMount() {
+  //   fetch('/data/Yeonju/commentData.json')
+  //     .then(res => res.json())
+  //     .then(commentData => {
+  //       this.setState({
+  //         commentList: commentData,
+  //       });
+  //     });
+  // }
 
   handleCommentInput = e => {
     this.setState({
@@ -39,9 +40,17 @@ class Upload extends React.Component {
     e.preventDefault();
     const { commentList, commentValue } = this.state;
     this.setState({
-      // commentList: commentList.concat([commentValue]),
-      commentList: [...commentList, commentValue],
+      //목데이터 활용 댓글
+      // commentList: [...commentList, commentValue],
+      //onSubmit 활용 댓글
+      commentList: commentList.concat({ id: 'Unknown', comment: commentValue }),
       commentValue: '',
+    });
+  };
+
+  deleteComment = list => {
+    this.setState({
+      commentList: [...list],
     });
   };
 
@@ -106,10 +115,20 @@ class Upload extends React.Component {
               </li>
               {this.state.commentList.map((commentElement, index) => {
                 return (
+                  //목데이터 활용 댓글
+                  // <Comment
+                  //   key={index}
+                  //   userName={commentElement.userName}
+                  //   comment={commentElement.content}
+                  // />
+                  //onSubmit 활용 댓글
                   <Comment
-                    key={index}
-                    userName={commentElement.userName}
-                    comment={commentElement.content}
+                    key={commentElement.id + index}
+                    id={commentElement.id}
+                    comment={commentElement.comment}
+                    commentList={this.state.commentList}
+                    deleteComment={this.deleteComment}
+                    index={index}
                   />
                 );
               })}
