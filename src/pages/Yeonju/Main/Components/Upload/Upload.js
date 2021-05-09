@@ -16,6 +16,7 @@ class Upload extends React.Component {
     this.state = {
       commentValue: '',
       commentList: [],
+      isLiked: false,
     };
   }
 
@@ -54,6 +55,10 @@ class Upload extends React.Component {
     });
   };
 
+  changeIsLikedState = () => {
+    this.setState({ isLiked: !this.state.isLiked });
+  };
+
   render() {
     const {
       authorId,
@@ -79,7 +84,10 @@ class Upload extends React.Component {
             </div>
             <div className="feeds_upload_icons">
               <div>
-                <button>
+                <button
+                  className={this.state.isLiked ? 'redHeart' : 'whiteHeart'}
+                  onClick={this.changeIsLikedState}
+                >
                   <FontAwesomeIcon
                     icon={faHeart}
                     className="far fa-heart buttonicon icon"

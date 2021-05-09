@@ -42,13 +42,20 @@
       display: flex;
       align-items: center;
       padding-left: 10px;
+
       div {
         position: absolute;
       }
+
+      .redHeart {
+        color: red;
+      }
+
       .icon {
         font-size: 30px;
         padding: 5px;
       }
+
       .fa-bookmark {
         position: relative;
         left: 350px;
