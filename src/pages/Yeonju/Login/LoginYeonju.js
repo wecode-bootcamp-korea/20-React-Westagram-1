@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { API } from '../../../config.js';
+import { API } from '../config.js';
 import './LoginYeonju.scss';
 
 class LoginYeonju extends React.Component {
