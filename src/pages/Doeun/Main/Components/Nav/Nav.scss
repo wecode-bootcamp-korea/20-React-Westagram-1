@@ -1,0 +1,164 @@
+nav {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 999;
+
+  * {
+    margin: auto 8px;
+  }
+
+  > div {
+    height: 54px;
+    width: 940px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-family: instaStyleFont;
+    font-size: 28px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .search {
+    position: relative;
+  }
+
+  .search input {
+    width: 215px;
+    height: 28px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    text-align: center;
+  }
+
+  .search input:focus {
+    text-align: left;
+    padding-left: 28px;
+  }
+
+  .search input::placeholder {
+    color: #9ba2ae;
+    text-align: center;
+  }
+
+  .search input:focus::placeholder {
+    text-align: left;
+  }
+
+  .fa-search {
+    position: absolute;
+    top: 10px;
+    left: 32%;
+    color: #9ba2ae;
+    font-size: 11px;
+  }
+
+  .search:focus-within .fa-search {
+    left: 4%;
+  }
+
+  .searchList {
+    position: absolute;
+    top: 30px;
+    left: -15px;
+    width: 280px;
+    min-height: 60px;
+    max-height: 350px;
+    color: #8e8e8e;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #bebebe;
+    text-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+  }
+
+  .searchList,
+  .searchList * {
+    visibility: hidden;
+    margin: 0;
+  }
+
+  .search:focus-within .searchList,
+  .search:focus-within .searchList * {
+    visibility: visible;
+  }
+
+  .idList > p {
+    position: relative;
+    top: 20px;
+  }
+
+  .searchedUser {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+
+    .userId {
+      text-align: left;
+    }
+
+    &:hover {
+      background-color: #f3ecf1;
+    }
+  }
+
+  .id {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  #description {
+    width: 180px;
+  }
+
+  .icons {
+    white-space: nowrap;
+    font-size: 22px;
+
+    img:first-child {
+      width: 20px;
+      transform: translateY(2px);
+    }
+
+    img:nth-child(2) {
+      width: 25px;
+      transform: translateY(5px);
+    }
+
+    img {
+      width: 25px;
+      transform: translateY(3px);
+    }
+
+    .profile {
+      width: 25px;
+      transform: translateY(3px);
+      margin-right: 0;
+      border-radius: 50%;
+    }
+  }
+}

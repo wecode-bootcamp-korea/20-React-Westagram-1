@@ -1,0 +1,65 @@
+.comments {
+  display: flex;
+  padding: 15px;
+  height: 55px;
+  border-top: 1px solid #dbdbdb;
+
+  div {
+    width: 42px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input {
+    width: 93%;
+    border: none;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background-color: white;
+    color: #b2dffc;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  button.active {
+    color: #4295f6;
+    cursor: pointer;
+  }
+
+  .Comment {
+    position: relative;
+  }
+
+  .likeComment {
+    position: absolute;
+    right: 20px;
+    width: 16px;
+    cursor: pointer;
+  }
+
+  .liked {
+    top: -1px;
+    transform: scale(1.1);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  #smalldot {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 15px;
+    margin: 0;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}

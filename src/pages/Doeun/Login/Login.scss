@@ -1,0 +1,90 @@
+@font-face {
+  font-family: instaStyleFont;
+  src: url('http://localhost:3000/images/Doeun/blue_vinyl_regular_ps_ot.otf');
+}
+
+.loginDoeun {
+  margin-top: 100px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #fafafa;
+
+  .flexcontainer {
+    display: flex;
+    margin: auto;
+    max-width: 935px;
+    padding: 30px 75px;
+  }
+
+  .iphone {
+    display: none;
+    position: relative;
+  }
+
+  .screen {
+    position: absolute;
+    top: 97px;
+    right: 61px;
+    width: 245px;
+    height: 433px;
+    animation: imgchange 6s linear infinite;
+  }
+
+  @keyframes imgchange {
+    0% {
+      background-image: url('http://localhost:3000/images/Doeun/screen1.jpg');
+    }
+    25% {
+      background-image: url('http://localhost:3000/images/Doeun/screen2.jpg');
+    }
+    50% {
+      background-image: url('http://localhost:3000/images/Doeun/screen3.jpg');
+    }
+    75% {
+      background-image: url('http://localhost:3000/images/Doeun/screen4.jpg');
+    }
+    100% {
+      background-image: url('http://localhost:3000/images/Doeun/screen1.jpg');
+    }
+  }
+
+  .defaultBox {
+    position: relative;
+    left: -15px;
+  }
+
+  .signupBox {
+    width: 350px;
+    height: 63px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+
+    * {
+      margin: auto;
+    }
+
+    span {
+      color: #4295f6;
+      font-weight: bolder;
+    }
+  }
+
+  .download {
+    p {
+      margin: 20px;
+    }
+
+    img {
+      height: 40px;
+      margin: 0 2px;
+    }
+  }
+
+  @media (min-width: 875px) {
+    .iphone {
+      display: block;
+    }
+  }
+}
