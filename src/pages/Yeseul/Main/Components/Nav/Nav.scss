@@ -3,8 +3,9 @@
 .navYeseul {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   right: 0;
+  transform: translateX(-50%);
   padding: 8px 0;
   border-bottom: 1px solid $main-border;
   background-color: #fff;
@@ -21,26 +22,23 @@
     box-sizing: border-box;
 
     h1 {
-      margin: 0;
-    }
-
-    h1 .like-button {
       display: flex;
       align-items: center;
+      margin: 0;
+      font-size: 28px;
       color: $main-font;
 
-      img {
+      button {
         margin-right: 15px;
-        padding-right: 14px;
+        padding: 0 14px 0 0;
         width: 22px;
         height: 22px;
         box-sizing: content-box;
         border-right: 2px solid $main-font;
-      }
 
-      span {
-        padding-bottom: 7px;
-        font-size: 28px;
+        img {
+          margin: 0;
+        }
       }
     }
 

@@ -9,12 +9,8 @@ class Nav extends Component {
       <nav className="navYeseul">
         <div className="inner-nav">
           <h1>
-            <IconButton
-              className="like-button"
-              info={{ name: 'logo', fileName: 'instagram.svg' }}
-            >
-              <span className="logo">westagram</span>
-            </IconButton>
+            <IconButton info={{ name: 'logo', fileName: 'instagram.svg' }} />
+            <span className="logo">westagram</span>
           </h1>
           <form className="nav__search">
             <input type="search" placeholder="검색" />
