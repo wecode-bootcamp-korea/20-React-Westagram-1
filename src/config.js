@@ -1,2 +1,5 @@
 const IP = '10.58.6.40:8000';
-export const LOGIN_API = `http://${IP}/user/login`;
+export const API = {
+  SIGN_UP: `http://${IP}/user/signup`,
+  LOGIN: `http://${IP}/user/login`,
+};

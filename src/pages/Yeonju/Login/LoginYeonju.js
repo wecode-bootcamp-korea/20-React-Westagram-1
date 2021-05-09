@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import { LOGIN_API } from '../../config.js';
+import { API } from '../../../config.js';
 import './LoginYeonju.scss';
 
 class LoginYeonju extends React.Component {
@@ -9,21 +9,23 @@ class LoginYeonju extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
+      loginMode: true,
     };
   }
 
-  // goToMain = e => {
-  //   this.props.history.push('/main-yeonju');
-  // };
+  convertMode = () => {
+    this.setState({
+      loginMode: !this.state.loginMode,
+    });
+  };
 
-  goToMain = e => {
+  login = e => {
     e.preventDefault();
-    fetch('http://10.58.6.40:8000/user/login', {
+    fetch(API.LOGIN, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.idValue,
         password: this.state.pwValue,
-        account: '',
       }),
     })
       .then(res => res.json())
@@ -31,11 +33,63 @@ class LoginYeonju extends React.Component {
         if (res.message === 'SUCCESS') {
           localStorage.setItem('token', res.token);
           this.props.history.push('/main-yeonju');
-        } else {
-          alert('wrong!!!');
+        } else if (res.message === 'INVALID_USER') {
+          const wantToSignUp = window.comfirm(
+            '가입되지 않은 정보입니다. 회원가입하시겠습니까?'
+          );
+          wantToSignUp && this.convertMode();
         }
       });
   };
+
+  signUp = e => {
+    e.preventDefault();
+    fetch(API.SIGN_UP, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.message === 'SUCCESS') {
+          this.setState({
+            idValue: '',
+            pwValue: '',
+          });
+          alert('회원가입되었습니다!');
+          this.convertMode();
+        } else {
+          alert(res.MESSAGE);
+        }
+      });
+  };
+
+  // goToMain = e => {
+  //   this.props.history.push('/main-yeonju');
+  // };
+
+  // goToMain = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.6.40:8000/user/login', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.idValue,
+  //       password: this.state.pwValue,
+  //       account: '',
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       if (res.message === 'SUCCESS') {
+  //         localStorage.setItem('token', res.token);
+  //         this.props.history.push('/main-yeonju');
+  //       } else {
+  //         alert('wrong!!!');
+  //       }
+  //     });
+  // };
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -45,19 +99,21 @@ class LoginYeonju extends React.Component {
   };
 
   render() {
-    const { idValue, pwValue } = this.state;
+    const { idValue, pwValue, loginMode } = this.state;
 
     return (
       <div className="loginYeonju">
         <div className="outbox">
           <header className="westagram"> Westagram </header>
-          <form className="id_pw">
+          <form
+            className="id_pw"
+            onSubmit={loginMode ? this.login : this.signUp}
+          >
             <input
               className="idInput"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleInput}
-              onKeyUp={this.changeButton}
               name="idValue"
             />
             <input
@@ -65,17 +121,18 @@ class LoginYeonju extends React.Component {
               type="password"
               placeholder="비밀번호"
               onChange={this.handleInput}
-              onKeyUp={this.changeButton}
               name="pwValue"
             />
             <button
-              type="button"
-              onClick={this.goToMain}
+              type="submit"
               className={`btn${
                 idValue.includes('@') && pwValue.length >= 5
                   ? 'Active'
                   : 'Disabled'
               }`}
+              disabled={
+                idValue.includes('@') && pwValue.length >= 5 ? false : true
+              }
             >
               로그인
             </button>

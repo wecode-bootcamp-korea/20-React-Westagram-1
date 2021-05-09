@@ -5,10 +5,10 @@ class Comment extends React.Component {
   render() {
     const { userName, comment } = this.props;
     return (
-      <form>
+      <form className="Comment">
         <li>
-          {userName}
-          {comment}
+          <span className="userName">{userName}</span>
+          <span className="comment">{comment}</span>
         </li>
       </form>
     );
