@@ -1,0 +1,68 @@
+$btnOffColor : #c5e1fc;
+$btnOnColor : #3A34FF;
+@mixin btnDesign {
+  border: none;
+  padding: 10px;
+  width: 61%;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+}
+@mixin inputDesign {
+  padding: 15px;
+  width: 60%;
+  border: solid 1px #e2e3e3;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: 13px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border: solid 1px #e2e3e3;
+  background-color: white;
+
+  .LoginBtn {
+    @include btnDesign();
+    background-color: $btnOffColor;
+  }
+
+  .LoginBtnOn{    
+    @include btnDesign();
+    background-color: $btnOnColor;
+  }
+
+  .IdInput {
+    @include inputDesign();
+  }
+  
+  .PwInput {
+    @include inputDesign();
+    margin-top: -30px;
+  }
+
+  .Logo {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+  }
+}
+
+.Forgot {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #003568;
+}

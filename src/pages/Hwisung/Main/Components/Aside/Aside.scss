@@ -1,0 +1,107 @@
+
+.Aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 250px;
+  height: 500px;
+  background-color: #f3f3f3;
+
+  .profile {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #f3f3f3;
+    padding-top: 10px;
+
+    .profileImg {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+
+    .profileInfo {
+      display: flex;
+      flex-direction: column;
+      font-family: sans-serif;
+      margin-left: 20px;
+      margin-top: 5px;
+
+      .profileId {
+        font-size: 12px;
+      }
+
+      .profileName {
+        color: #868787;
+      }
+    }
+  }
+
+  .storyListImg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .recommendListImg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .storyList {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #868787;
+
+    .storyListInfo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .storyListImg {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+
+    .seeAll1 {
+      margin-left: 150px;
+      font-family: sans-serif;
+      color: black;
+    }
+  }
+
+  .recommend {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #868787;
+
+    .seeAll2 {
+      margin-left: 90px;
+      font-family: sans-serif;
+      color: black;
+    }
+
+    .recommendListImg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .info {
+    background-color: #f3f3f3;
+    font-family: sans-serif;
+    font-size: 10px;
+    color: #c7c7c7;
+  }
+}
