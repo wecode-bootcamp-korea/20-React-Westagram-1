@@ -11,18 +11,15 @@ nav,
 section {
   display: block;
 }
-
 ol,
 ul,
 li {
   list-style: none;
 }
-
 blockquote,
 q {
   quotes: none;
 }
-
 blockquote:before,
 blockquote:after,
 q:before,
@@ -30,17 +27,14 @@ q:after {
   content: '';
   content: none;
 }
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 /* common style */
 a {
   text-decoration: none;
 }
-
 button {
   padding: 0;
   background-color: transparent;
@@ -48,12 +42,10 @@ button {
   border: none;
   cursor: pointer;
 }
-
 input {
   border: none;
   background: none;
 }
-
 input:focus {
   outline: none;
 }

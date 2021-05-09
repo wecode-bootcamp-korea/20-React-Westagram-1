@@ -1,0 +1,64 @@
+.underbar {
+  position: relative;
+  padding: 5px 15px;
+  font-size: 13px;
+
+  div {
+    display: inline;
+  }
+
+  .tab img {
+    width: 28px;
+    margin-right: 10px;
+  }
+
+  .tab img:first-child {
+    cursor: pointer;
+  }
+
+  .pop {
+    animation: pop 0.2s linear 0s 1 alternate;
+  }
+
+  #red {
+    display: none;
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .shrink {
+    animation: shrink 0.2s linear 0s 1 alternate;
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .bookmark img {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 25px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
