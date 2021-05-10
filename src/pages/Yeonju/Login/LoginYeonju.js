@@ -9,66 +9,12 @@ class LoginYeonju extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
-      loginMode: true,
     };
   }
 
-  convertMode = () => {
-    this.setState({
-      loginMode: !this.state.loginMode,
-    });
+  goToMain = e => {
+    this.props.history.push('/main-yeonju');
   };
-
-  login = e => {
-    e.preventDefault();
-    fetch(API.LOGIN, {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.idValue,
-        password: this.state.pwValue,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        if (res.message === 'SUCCESS') {
-          localStorage.setItem('token', res.token);
-          this.props.history.push('/main-yeonju');
-        } else if (res.message === 'INVALID_USER') {
-          const wantToSignUp = window.comfirm(
-            '가입되지 않은 정보입니다. 회원가입하시겠습니까?'
-          );
-          wantToSignUp && this.convertMode();
-        }
-      });
-  };
-
-  signUp = e => {
-    e.preventDefault();
-    fetch(API.SIGN_UP, {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.idValue,
-        password: this.state.pwValue,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        if (res.message === 'SUCCESS') {
-          this.setState({
-            idValue: '',
-            pwValue: '',
-          });
-          alert('회원가입되었습니다!');
-          this.convertMode();
-        } else {
-          alert(res.MESSAGE);
-        }
-      });
-  };
-
-  // goToMain = e => {
-  //   this.props.history.push('/main-yeonju');
-  // };
 
   // goToMain = e => {
   //   e.preventDefault();
@@ -99,16 +45,13 @@ class LoginYeonju extends React.Component {
   };
 
   render() {
-    const { idValue, pwValue, loginMode } = this.state;
+    const { idValue, pwValue } = this.state;
 
     return (
       <div className="loginYeonju">
         <div className="outbox">
           <header className="westagram"> Westagram </header>
-          <form
-            className="id_pw"
-            onSubmit={loginMode ? this.login : this.signUp}
-          >
+          <form className="id_pw" onSubmit={this.goToMain}>
             <input
               className="idInput"
               type="text"
