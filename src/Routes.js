@@ -8,8 +8,8 @@ import MainDoeun from './pages/Doeun/Main/Main';
 import LoginHwisung from './pages/Hwisung/Login/Login';
 import MainHwisung from './pages/Hwisung/Main/Main';
 
-import LoginYeonju from './pages/Yeonju/Login/Login';
-import MainYeonju from './pages/Yeonju/Main/Main';
+import LoginYeonju from './pages/Yeonju/Login/LoginYeonju';
+import MainYeonju from './pages/Yeonju/Main/MainYeonju';
 
 import LoginYeseul from './pages/Yeseul/Login/Login';
 import MainYeseul from './pages/Yeseul/Main/Main';
