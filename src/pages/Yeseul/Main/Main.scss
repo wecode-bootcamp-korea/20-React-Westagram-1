@@ -1,0 +1,51 @@
+@import '../../../Styles/common.scss';
+
+.mainYeseul {
+  padding-top: 54px;
+  line-height: 18px;
+
+  main {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+
+    header {
+      font-weight: 600;
+    }
+
+    .feeds {
+      width: 100%;
+      max-width: 610px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .align-item-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .align-right {
+    margin-left: auto;
+  }
+
+  button:disabled,
+  input:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  ul,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}

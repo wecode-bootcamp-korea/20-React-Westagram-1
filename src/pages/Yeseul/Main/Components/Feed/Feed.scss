@@ -1,0 +1,78 @@
+@import '../../../../../Styles/common.scss';
+
+.feed {
+  margin-bottom: 60px;
+
+  &__header {
+    padding: 8px 16px;
+
+    &__more-icon {
+      margin-right: -12px;
+      padding: 12px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-bottom: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    margin-top: 4px;
+    padding: 0 8px;
+
+    button {
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__likes-number {
+    margin-bottom: 5px !important;
+    padding: 0 16px !important;
+
+    a {
+      color: $main-font;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  &__description {
+    margin-bottom: 5px;
+    padding: 0 16px;
+  }
+
+  &__comments {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid $border--lighten;
+  }
+
+  &__form {
+    padding: 0 8px;
+    height: 56px;
+
+    .feed__input-comment {
+      width: calc(100% - 96px);
+    }
+
+    .feed__submit-comment {
+      padding: 8px;
+      width: auto;
+      font-size: 14px;
+      font-weight: 600;
+      color: $btn--blue;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../../../../Styles/common.scss';
+
+.feed__comment {
+  position: relative;
+  margin-bottom: 5px !important;
+
+  a {
+    margin-right: 4px;
+  }
+
+  .delete-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    margin-top: -20px;
+    color: $main-font;
+    line-height: 24px;
+    opacity: 0.2;
+  }
+
+  &:hover .delete-btn {
+    display: block;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .like-btn {
+    padding: 0;
+    width: 12px;
+    height: 12px;
+
+    svg {
+      fill: none;
+      stroke: $border--darken;
+      stroke-width: 45px;
+    }
+
+    &.clicked svg {
+      fill: $btn--red;
+      stroke: $btn--red;
+    }
+  }
+}

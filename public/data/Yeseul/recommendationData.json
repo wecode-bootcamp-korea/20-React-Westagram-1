@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "photo.by.ruby",
+    "profileImage": "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "follower": "_angstblute"
+  },
+  {
+    "id": 2,
+    "name": "yuhemian",
+    "profileImage": "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80",
+    "follower": "mitzzul"
+  },
+  {
+    "id": 3,
+    "name": "outofstyle.ig",
+    "profileImage": "https://images.unsplash.com/photo-1504198458649-3128b932f49e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80",
+    "follower": "asdfslk"
+  }
+]

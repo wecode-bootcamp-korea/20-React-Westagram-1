@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "contents": {
+      "postedImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80",
+      "description": "No.S009",
+      "likesNum": 503,
+      "date": "April 29, 2021."
+    },
+    "writer": {
+      "name": "objental",
+      "profileImage": "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+    }
+  },
+  {
+    "id": "2",
+    "contents": {
+      "postedImage": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80",
+      "description": "이번 한 주도 수고 많으셨습니다. ☕️ 한 주 마무리 잘 하시고 가벼운 마음으로 주말을 맞이하세요!",
+      "likesNum": 248,
+      "date": "April 30, 2021."
+    },
+    "writer": {
+      "name": "gwilee",
+      "profileImage": "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=954&q=80"
+    }
+  },
+  {
+    "id": "3",
+    "contents": {
+      "postedImage": "https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80",
+      "description": "이 명작이 요즘 보이지 않는 이유는 워너에서 박스셋을 준비하고 있기 때문입니다.",
+      "likesNum": 273,
+      "date": "April 30, 2021."
+    },
+    "writer": {
+      "name": "gimbabrecords",
+      "profileImage": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/12080597_923825157705378_1489962888_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=9nst_eKrxq0AX8c61yE&edm=AEF8tYYBAAAA&ccb=7-4&oh=5a619dd2781b4f659c195f94133bde8a&oe=60B3F65B&_nc_sid=a9513d"
+    }
+  }
+]

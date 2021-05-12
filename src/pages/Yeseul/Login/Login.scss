@@ -1,0 +1,60 @@
+@import '../../../Styles/common.scss';
+
+.loginYeseul {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  padding: 32px 0 25px;
+  width: 350px;
+  text-align: center;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .login-form {
+    margin: 35px 40px 120px;
+
+    &__input-box {
+      margin-bottom: 15px;
+
+      input {
+        margin: 3px 0;
+        padding: 12px 10px 10px;
+        border: 1px solid $main-border;
+        border-radius: 3px;
+        background-color: $bg-light-grey;
+
+        &::placeholder,
+        &::-webkit-input-placeholder,
+        &::-ms-input-placeholder {
+          color: $font--grey;
+        }
+
+        &:focus {
+          border: 1px solid $border--gray;
+        }
+      }
+    }
+
+    button {
+      padding: 8px;
+      width: 100%;
+      border-radius: 4px;
+      background-color: $btn--blue;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  .find-pw {
+    font-size: 13px;
+  }
+
+  button:disabled,
+  input:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
